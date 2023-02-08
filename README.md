@@ -1,1 +1,0 @@
-# commercial-detctor-ml
