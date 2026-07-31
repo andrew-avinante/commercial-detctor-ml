@@ -1,0 +1,35 @@
+{
+  "best_epoch": 19,
+  "val_ap": 0.9945868568482598,
+  "threshold": 0.8168,
+  "val": {
+    "ap": 0.9945868568482598,
+    "frame_f1": 0.9738439981317141,
+    "frame_precision": 0.9545610621494792,
+    "frame_recall": 0.9939220593493028,
+    "threshold": 0.8168,
+    "event_precision": 0.967741935483871,
+    "event_recall": 1.0,
+    "event_f1": 0.9836065573770492,
+    "event_tp": 90,
+    "event_fp": 3,
+    "event_fn": 0,
+    "event_n_true": 90,
+    "event_n_pred": 93
+  },
+  "test": {
+    "ap": 0.9449411800920378,
+    "frame_f1": 0.9292749319475377,
+    "frame_precision": 0.9139408099688473,
+    "frame_recall": 0.9451323869928521,
+    "threshold": 0.8168,
+    "event_precision": 0.8520286396181385,
+    "event_recall": 0.967479674796748,
+    "event_f1": 0.9060913705583757,
+    "event_tp": 357,
+    "event_fp": 62,
+    "event_fn": 12,
+    "event_n_true": 369,
+    "event_n_pred": 419
+  }
+}
