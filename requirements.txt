@@ -1,0 +1,7 @@
+# Preprocessing and inference need only numpy plus an `ffmpeg`/`ffprobe` binary
+# on PATH. OpenCV, librosa, soundfile and scikit-learn are no longer used.
+numpy>=1.24
+
+# Training. For CUDA 12.x on the RTX 3060:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+torch>=2.4
