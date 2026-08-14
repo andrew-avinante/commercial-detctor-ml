@@ -1,7 +1,6 @@
 # cdml — PyTorch commercial-break fade detector
 
-Replaces the Keras/TensorFlow pipeline (`preprocess.py`, `train.py`, `run.py`,
-`scan.py`) at the repository root. Those files are left in place for reference.
+The `cdml` package is the supported commercial-break detection pipeline.
 
 ```bash
 pip install -r requirements.txt          # numpy + torch; needs ffmpeg on PATH
@@ -24,14 +23,7 @@ python -m cdml.build_dataset --shows "/media/Raw/Thundarr the Barbarian" ... \
 python -m cdml.build_dataset --out data/chapters --assemble --cache cache_v2
 ```
 
-**Building from hand-labelled clips (the original route).**
-
-```bash
-python -m cdml.preprocess --vids commercial_detector/training_vids \
-                          --labels label_json --out cache
-```
-
-Then, either way:
+Then:
 
 ```bash
 python -m cdml.baseline  --cache cache_v2                 # no-model reference
@@ -53,7 +45,7 @@ python -m cdml.mark_chapters "/media/Shows/Courage the Cowardly Dog" --in-place
 
 ## The finding that should drive the next round of work
 
-`get_black.py` mines training clips from ffmpeg `blackdetect d=1` hits, so **a
+The previous corpus builder mined training clips from ffmpeg `blackdetect d=1` hits, so **a
 clip only enters the dataset if ffmpeg already found ≥1 second of black in
 it.** 289 of the 296 cached clips contain fully-dark frames. Both classes are
 genuine fades; the negatives are scene transitions, not dark scenes.
@@ -78,7 +70,7 @@ Nothing separates them, because the deciding information is not inside the
 * **No easy negatives.** 98% of training clips contain a fade; at scan time
   over 99% of windows do not. The model never sees ordinary footage.
 * **The black is always centred**, at 0.49 ± 0.05 of the clip in *both*
-  classes, because `generate_random_clip` centres the window on the black run.
+  classes, because the window was centred on the black run.
   Nothing at inference looks like that.
 * **`d=1` clamps black duration**, destroying the one feature that really does
   differ between an act break and a scene transition.
@@ -96,8 +88,8 @@ the preferred way to build a corpus — see the quick start above.
 ### 1. The audio features carried no loudness (the big one)
 
 ```python
-audio, sr = librosa.load(audio_path, sr=24)      # old preprocess.py:74
-audio = librosa.util.normalize(audio)            # old preprocess.py:81
+audio, sr = librosa.load(audio_path, sr=24)      # previous preprocessing
+audio = librosa.util.normalize(audio)            # previous preprocessing
 ```
 
 `sr=24` resamples the **waveform** to 24 Hz. Anti-alias filtering discards
@@ -140,7 +132,7 @@ augmentation can never desynchronise them from a cached copy.
 
 ### 3. Validation was measuring memorisation
 
-- `train_test_split` split randomly over clips, while `preprocess.py` wrote four
+- The previous pipeline split randomly over clips while it wrote four
   augmented **copies** of every clip to disk. Copies of the same clip landed on
   both sides of the split.
 - `EarlyStopping(monitor='loss')` watched *training* loss, so
@@ -156,18 +148,15 @@ validation. There was no test split at all before.
 
 ### 4. Silent data-misalignment risk
 
-```python
-video_features_files = glob.glob('training_dir/processed_video*.npy')
-audio_features_files = glob.glob('training_dir/processed_audio*.npy')
-labels_files         = glob.glob('training_dir/labels*.npy')
-```
+The previous pipeline kept video, audio, and labels in separate filename-globbed
+arrays.
 
 Three independent globs, zipped positionally. `glob` does not guarantee ordering,
 and the augmented-copy suffixes (`_augmented_0`) interleave differently across
 the three patterns. Any disagreement trains video against another clip's labels,
 with no error. Now clips are paired by parsed clip number.
 
-Related, in `CustomDataGenerator.__getitem__`:
+Related, in the previous batch generator:
 `to_categorical(label_batch)` without `num_classes` infers the class count from
 the batch maximum — an all-negative batch yields shape `(B,192,1)` against a
 2-unit softmax. The model now emits one logit per frame with BCE, so the failure
@@ -204,7 +193,7 @@ did nothing. Replaced with warmup + cosine decay.
 
 ### 8. Inference
 
-`scan.py` called `librosa.load(VIDEO_PATH, ...)` **once per 4-second window** —
+The previous scanner called `librosa.load(VIDEO_PATH, ...)` **once per 4-second window** —
 roughly 330 separate decodes of the same file for a 22-minute episode, each
 starting from the beginning. `cdml.infer` decodes once, streaming.
 
@@ -214,9 +203,6 @@ detections. Now raw probabilities are averaged across every window covering a
 frame, then thresholded once with hysteresis (smooth → dual threshold → minimum
 duration), which yields stable segments instead of the flicker a per-frame
 `argmax` produces.
-
-(`scan.py:82` also had a dead line, `processed_audio[:len(processed_audio)]`,
-presumably meant to be `[:len(processed_frames)]`.)
 
 ---
 
@@ -236,32 +222,3 @@ matching. The event numbers are the ones that reflect the product: whether each
 real break is found once, at roughly the right time.
 
 ---
-
-## Recommended next steps
-
-1. **Preserve episode names — do this before tuning anything.** `rename.py`
-   renames `train_00007_A Creepy Tangle... s03e02.mp4` to `train_00007.mp4`,
-   destroying the only episode grouping signal. `preprocess.py` parses episodes
-   from the filename when present, and otherwise falls back to per-clip
-   grouping — which is what happens today, so **train/val/test share episodes
-   and every score is optimistic.** `train.py` prints a warning when this is the
-   case.
-
-   Two ways to fix it, in order of preference:
-
-   ```bash
-   # (a) stop discarding the suffix in rename.py, then re-preprocess; or
-   # (b) supply the mapping out of band:
-   python -m cdml.preprocess --vids ... --episodes label_json/episodes.json
-   ```
-
-   where `episodes.json` is `{"7": "A Creepy Tangle s03e02", ...}` (a list of
-   `{"num":…, "episode":…}` also works). Note that matching the current clips
-   back to `commercial_detector/pre_train_vids/` is not a viable recovery route
-   — only 22 of 351 clips match by file size, so those are different encodes or
-   a different batch.
-2. **Label more hard negatives.** 40 of 311 mined clips have no label entry and
-   are skipped. Given that negatives and positives look identical on the video
-   channel, hard negatives are the scarce resource.
-3. **Widen the audio features** before adding video capacity — more mel bands, or
-   a longer context window around the fade. That is where the discrimination is.

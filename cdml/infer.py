@@ -2,7 +2,7 @@
 
     python -m cdml.infer --model runs/baseline/best.pt --video episode.mp4
 
-Replaces `scan.py`, which had two serious problems:
+The previous scanner had two serious problems:
 
 * It called `librosa.load(VIDEO_PATH, ...)` once per 4-second window. On a
   22-minute episode that is ~330 separate decodes of the same file, and librosa
@@ -14,8 +14,6 @@ Replaces `scan.py`, which had two serious problems:
   probabilities are averaged across every window covering a frame, then
   thresholded once with hysteresis.
 
-`scan.py` also had a dead line, `processed_audio[:len(processed_audio)]`, which
-was presumably meant to be `[:len(processed_frames)]`.
 """
 from __future__ import annotations
 

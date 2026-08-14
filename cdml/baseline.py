@@ -7,8 +7,8 @@ thresholds fitted on the training split only. If the network cannot clearly
 beat this, the extra 230k parameters are not buying anything and the honest
 answer is to ship the threshold rule.
 
-Worth running before any training run: `get_black.py` already uses ffmpeg
-`blackdetect` to mine candidate clips, so the model's real job is the narrower
+Worth running before any training run: the original clip miner used ffmpeg
+`blackdetect` to mine candidate clips, so the model's real job was the narrower
 one of separating commercial-break fades from ordinary in-episode black frames.
 """
 from __future__ import annotations

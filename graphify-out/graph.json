@@ -11,6 +11,7 @@
       "_origin": "ast",
       "id": "cdml_init",
       "community": 12,
+      "community_name": "__init__.py",
       "norm_label": "__init__.py"
     },
     {
@@ -21,6 +22,7 @@
       "_origin": "ast",
       "id": "cdml_init_rationale_1",
       "community": 12,
+      "community_name": "__init__.py",
       "norm_label": "pytorch commercial-break fade detector."
     },
     {
@@ -31,6 +33,7 @@
       "_origin": "ast",
       "id": "cdml_baseline",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "baseline.py"
     },
     {
@@ -41,6 +44,7 @@
       "_origin": "ast",
       "id": "cdml_baseline_baseline_scores",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "baseline_scores()"
     },
     {
@@ -51,6 +55,7 @@
       "_origin": "ast",
       "id": "cdml_baseline_py_ndarray",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "ndarray"
     },
     {
@@ -61,6 +66,7 @@
       "_origin": "ast",
       "id": "cdml_baseline_main",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "main()"
     },
     {
@@ -71,6 +77,7 @@
       "_origin": "ast",
       "id": "cdml_baseline_rationale_1",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "a no-model baseline, to check the network is earning its keep. python -m..."
     },
     {
@@ -81,6 +88,7 @@
       "_origin": "ast",
       "id": "cdml_baseline_rationale_29",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "(n, t) score in [0,1]: dark picture and quiet audio."
     },
     {
@@ -91,6 +99,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "build_dataset.py"
     },
     {
@@ -101,6 +110,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_log",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "log()"
     },
     {
@@ -111,6 +121,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_decode_episode",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "decode_episode()"
     },
     {
@@ -121,6 +132,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_place",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "place()"
     },
     {
@@ -131,6 +143,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_cut",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "cut()"
     },
     {
@@ -141,6 +154,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_build_episode",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "build_episode()"
     },
     {
@@ -151,6 +165,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_py_path",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "path"
     },
     {
@@ -161,6 +176,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_shard_name",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "shard_name()"
     },
     {
@@ -171,6 +187,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_run_build",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "run_build()"
     },
     {
@@ -181,6 +198,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_run_assemble",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "run_assemble()"
     },
     {
@@ -191,6 +209,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_main",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "main()"
     },
     {
@@ -201,6 +220,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_rationale_1",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "cut a training cache straight from chapter-marked episodes. # 1. look before..."
     },
     {
@@ -211,6 +231,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_rationale_68",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "decode video and audio in one pass. returns (frames uint8, wav float32). one..."
     },
     {
@@ -221,6 +242,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_rationale_104",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "random window start that contains [s, e) with `margin` frames to spare...."
     },
     {
@@ -231,6 +253,7 @@
       "_origin": "ast",
       "id": "cdml_build_dataset_rationale_118",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "one window -> (frames, audio features, per-frame labels)."
     },
     {
@@ -241,6 +264,7 @@
       "_origin": "ast",
       "id": "cdml_chapters",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "chapters.py"
     },
     {
@@ -251,6 +275,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_find_videos",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "find_videos()"
     },
     {
@@ -261,6 +286,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_py_path",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "path"
     },
     {
@@ -271,6 +297,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_episode_id",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "episode_id()"
     },
     {
@@ -281,6 +308,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_probe",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "probe()"
     },
     {
@@ -291,6 +319,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_usable_marks",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "usable_marks()"
     },
     {
@@ -301,6 +330,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_black_events",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "black_events()"
     },
     {
@@ -311,6 +341,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_py_ndarray",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "ndarray"
     },
     {
@@ -321,6 +352,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_snap_to_fade",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "snap_to_fade()"
     },
     {
@@ -331,6 +363,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_label_episode",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "label_episode()"
     },
     {
@@ -341,6 +374,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_main",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "main()"
     },
     {
@@ -351,6 +385,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_1",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "read commercial breaks out of container chapter markers. python -m..."
     },
     {
@@ -361,6 +396,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_48",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "`s1e1` from the filename, else the stem. this is the split group key."
     },
     {
@@ -371,6 +407,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_54",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "internal chapter boundaries (seconds) and duration. no decoding."
     },
     {
@@ -381,6 +418,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_69",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "drop marks in the tail: the last fade runs into the end credits or the black..."
     },
     {
@@ -391,6 +429,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_81",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "locate fades as (start, end, core_start, core_end) frame indices. hysteresis,..."
     },
     {
@@ -401,6 +440,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_116",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "the fade whose core sits nearest `t_frame`, or none if none is within tol."
     },
     {
@@ -411,6 +451,7 @@
       "_origin": "ast",
       "id": "cdml_chapters_rationale_129",
       "community": 2,
+      "community_name": "build_dataset.py",
       "norm_label": "match chapter marks to fades. returns breaks, unmatched marks, and the fades..."
     },
     {
@@ -421,6 +462,7 @@
       "_origin": "ast",
       "id": "cdml_config",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "config.py"
     },
     {
@@ -431,6 +473,7 @@
       "_origin": "ast",
       "id": "cdml_config_trainconfig",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "trainconfig"
     },
     {
@@ -441,6 +484,7 @@
       "_origin": "ast",
       "id": "cdml_config_rationale_1",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "shared constants and the training config. everything downstream keys off these,..."
     },
     {
@@ -451,6 +495,7 @@
       "_origin": "ast",
       "id": "cdml_dataset",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "dataset.py"
     },
     {
@@ -461,6 +506,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_cache",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "cache"
     },
     {
@@ -471,6 +517,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_cache_init",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".__init__()"
     },
     {
@@ -481,6 +528,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_py_device",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "device"
     },
     {
@@ -491,6 +539,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_cache_bytes_on_device",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".bytes_on_device()"
     },
     {
@@ -501,6 +550,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_cache_groups",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".groups()"
     },
     {
@@ -511,6 +561,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_grouped_split",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "grouped_split()"
     },
     {
@@ -521,6 +572,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_py_ndarray",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "ndarray"
     },
     {
@@ -531,6 +583,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_pos_weight_for",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "pos_weight_for()"
     },
     {
@@ -541,6 +594,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_py_tensor",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "tensor"
     },
     {
@@ -551,6 +605,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_batchsampler",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "batchsampler"
     },
     {
@@ -561,6 +616,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_batchsampler_init",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".__init__()"
     },
     {
@@ -571,6 +627,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_batchsampler_len",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".__len__()"
     },
     {
@@ -581,6 +638,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_batchsampler_iter",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": ".__iter__()"
     },
     {
@@ -591,6 +649,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_fetch",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "fetch()"
     },
     {
@@ -601,6 +660,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_augment",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "augment()"
     },
     {
@@ -611,6 +671,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_1",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "cache loading, leakage-free splitting, and on-gpu augmentation. the whole cache..."
     },
     {
@@ -621,6 +682,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_26",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "everything `preprocess.py` wrote, resident on `device`."
     },
     {
@@ -631,6 +693,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_49",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "split key per clip: episode when known, else the clip's own id."
     },
     {
@@ -641,6 +704,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_55",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "partition indices so no group spans two splits. groups are shuffled then..."
     },
     {
@@ -651,6 +715,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_90",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "neg/pos ratio, capped. ~12.5 on this dataset (7.4% positive frames)."
     },
     {
@@ -661,6 +726,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_99",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "shuffled index batches over one split."
     },
     {
@@ -671,6 +737,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_121",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "gather one batch as (frames float [0,1], audio, labels)."
     },
     {
@@ -681,6 +748,7 @@
       "_origin": "ast",
       "id": "cdml_dataset_rationale_132",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "batch-level augmentation, entirely on gpu. replaces the old approach of writing..."
     },
     {
@@ -691,6 +759,7 @@
       "_origin": "ast",
       "id": "cdml_features",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "features.py"
     },
     {
@@ -701,6 +770,7 @@
       "_origin": "ast",
       "id": "cdml_features_decodeerror",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decodeerror"
     },
     {
@@ -711,6 +781,7 @@
       "_origin": "ast",
       "id": "runtimeerror",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "runtimeerror"
     },
     {
@@ -721,6 +792,7 @@
       "_origin": "ast",
       "id": "cdml_features_run",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "_run()"
     },
     {
@@ -731,6 +803,7 @@
       "_origin": "ast",
       "id": "cdml_features_probe_duration",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "probe_duration()"
     },
     {
@@ -741,6 +814,7 @@
       "_origin": "ast",
       "id": "cdml_features_decode_gray",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decode_gray()"
     },
     {
@@ -751,6 +825,7 @@
       "_origin": "ast",
       "id": "cdml_features_py_ndarray",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "ndarray"
     },
     {
@@ -761,6 +836,7 @@
       "_origin": "ast",
       "id": "cdml_features_decode_audio",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decode_audio()"
     },
     {
@@ -771,6 +847,7 @@
       "_origin": "ast",
       "id": "cdml_features_hz_to_mel",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "_hz_to_mel()"
     },
     {
@@ -781,6 +858,7 @@
       "_origin": "ast",
       "id": "cdml_features_mel_to_hz",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "_mel_to_hz()"
     },
     {
@@ -791,6 +869,7 @@
       "_origin": "ast",
       "id": "cdml_features_mel_filterbank",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "mel_filterbank()"
     },
     {
@@ -801,6 +880,7 @@
       "_origin": "ast",
       "id": "cdml_features_frame",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "_frame()"
     },
     {
@@ -811,6 +891,7 @@
       "_origin": "ast",
       "id": "cdml_features_audio_features",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "audio_features()"
     },
     {
@@ -821,6 +902,7 @@
       "_origin": "ast",
       "id": "cdml_features_clip_features",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "clip_features()"
     },
     {
@@ -831,6 +913,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_1",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decoding and audio feature extraction. decoding goes through ffmpeg pipes..."
     },
     {
@@ -841,6 +924,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_52",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decode to (t, size, size) uint8 grayscale at a fixed frame rate."
     },
     {
@@ -851,6 +935,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_73",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decode to mono float32 in [-1, 1]. returns silence if there is no track."
     },
     {
@@ -861,6 +946,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_100",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "(n_mels, n_fft//2 + 1) triangular, area-normalised filterbank."
     },
     {
@@ -871,6 +957,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_118",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "centred framing: row i is the n_fft window centred on sample i*hop."
     },
     {
@@ -881,6 +968,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_129",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "(n_frames, 1 + n_mels) float32 of db-scaled energies, normalised to ~[-1, 0]...."
     },
     {
@@ -891,6 +979,7 @@
       "_origin": "ast",
       "id": "cdml_features_rationale_155",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "decode one clip to (frames uint8 (t,size,size), audio (t, n_audio))."
     },
     {
@@ -901,26 +990,29 @@
       "_origin": "ast",
       "id": "cdml_infer",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "infer.py"
     },
     {
       "label": "stream_gray()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L36",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "cdml_infer_stream_gray",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "stream_gray()"
     },
     {
       "label": "load_model()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L61",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "cdml_infer_load_model",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "load_model()"
     },
     {
@@ -931,6 +1023,7 @@
       "_origin": "ast",
       "id": "cdml_infer_py_device",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "device"
     },
     {
@@ -941,16 +1034,18 @@
       "_origin": "ast",
       "id": "cdml_infer_py_no_grad",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "no_grad"
     },
     {
       "label": "scan()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L70",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "cdml_infer_scan",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "scan()"
     },
     {
@@ -961,36 +1056,40 @@
       "_origin": "ast",
       "id": "cdml_infer_py_ndarray",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "ndarray"
     },
     {
       "label": "to_events()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L121",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "cdml_infer_to_events",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "to_events()"
     },
     {
       "label": "fmt()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L135",
+      "source_location": "L133",
       "_origin": "ast",
       "id": "cdml_infer_fmt",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "fmt()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "cdml/infer.py",
-      "source_location": "L141",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "cdml_infer_main",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "main()"
     },
     {
@@ -1001,26 +1100,29 @@
       "_origin": "ast",
       "id": "cdml_infer_rationale_1",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "scan a full episode for commercial-break fades. python -m cdml.infer --model..."
     },
     {
       "label": "Yield (chunk, size, size) uint8 blocks from a single ffmpeg process.",
       "file_type": "rationale",
       "source_file": "cdml/infer.py",
-      "source_location": "L37",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "cdml_infer_rationale_37",
+      "id": "cdml_infer_rationale_35",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "yield (chunk, size, size) uint8 blocks from a single ffmpeg process."
     },
     {
       "label": "Return a per-frame fade probability for the whole file. `progress`, if given,\u2026",
       "file_type": "rationale",
       "source_file": "cdml/infer.py",
-      "source_location": "L73",
+      "source_location": "L71",
       "_origin": "ast",
-      "id": "cdml_infer_rationale_73",
+      "id": "cdml_infer_rationale_71",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "return a per-frame fade probability for the whole file. `progress`, if given,..."
     },
     {
@@ -1031,6 +1133,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "mark_chapters.py"
     },
     {
@@ -1041,6 +1144,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_probe_existing",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "probe_existing()"
     },
     {
@@ -1051,6 +1155,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_py_path",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "path"
     },
     {
@@ -1061,6 +1166,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_anchor_time",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "anchor_time()"
     },
     {
@@ -1071,6 +1177,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_boundaries",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "boundaries()"
     },
     {
@@ -1081,6 +1188,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_build_chapters",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "build_chapters()"
     },
     {
@@ -1091,6 +1199,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_escape",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "_escape()"
     },
     {
@@ -1101,6 +1210,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_ffmetadata",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "ffmetadata()"
     },
     {
@@ -1111,6 +1221,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_remux",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "remux()"
     },
     {
@@ -1121,6 +1232,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_verify",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "verify()"
     },
     {
@@ -1131,6 +1243,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_compare_to_existing",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "compare_to_existing()"
     },
     {
@@ -1141,6 +1254,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_process",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "process()"
     },
     {
@@ -1151,6 +1265,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_collect",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "collect()"
     },
     {
@@ -1161,6 +1276,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_main",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "main()"
     },
     {
@@ -1171,6 +1287,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_1",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "detect the act breaks in a full episode and write them back as chapters. python..."
     },
     {
@@ -1181,6 +1298,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_57",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "(chapters, duration). chapters as {start, end, title} in seconds."
     },
     {
@@ -1191,6 +1309,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_85",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "fade events -> sorted split points, plus the events that were rejected. each..."
     },
     {
@@ -1201,6 +1320,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_115",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "ffmetadata treats = ; # \\\\ and newline as special."
     },
     {
@@ -1211,6 +1331,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_134",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "copy `src` to `dst` with `chapters` attached. no re-encode."
     },
     {
@@ -1221,6 +1342,7 @@
       "_origin": "ast",
       "id": "cdml_mark_chapters_rationale_165",
       "community": 1,
+      "community_name": "mark_chapters.py",
       "norm_label": "score the detections against the file's own marks. read-only. both directions,..."
     },
     {
@@ -1231,6 +1353,7 @@
       "_origin": "ast",
       "id": "cdml_metrics",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "metrics.py"
     },
     {
@@ -1241,6 +1364,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_average_precision",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "average_precision()"
     },
     {
@@ -1251,6 +1375,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_py_ndarray",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "ndarray"
     },
     {
@@ -1261,6 +1386,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_best_f1",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "best_f1()"
     },
     {
@@ -1271,6 +1397,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_to_segments",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "to_segments()"
     },
     {
@@ -1281,6 +1408,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_moving_average",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "moving_average()"
     },
     {
@@ -1291,6 +1419,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_hysteresis",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "hysteresis()"
     },
     {
@@ -1301,6 +1430,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_event_scores",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "event_scores()"
     },
     {
@@ -1311,6 +1441,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_greedy_match",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "_greedy_match()"
     },
     {
@@ -1321,6 +1452,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_evaluate",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "evaluate()"
     },
     {
@@ -1331,6 +1463,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_1",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "evaluation metrics. pure numpy -- no sklearn dependency. accuracy was the wrong..."
     },
     {
@@ -1341,6 +1474,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_18",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "area under the precision-recall curve, computed exactly by ranking."
     },
     {
@@ -1351,6 +1485,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_37",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "sweep thresholds -> (best_f1, threshold, precision, recall)."
     },
     {
@@ -1361,6 +1496,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_60",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "boolean mask -> list of half-open [start, end) runs of true."
     },
     {
@@ -1371,6 +1507,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_70",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "centred moving average with edge padding, for de-flickering scores."
     },
     {
@@ -1381,6 +1518,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_82",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "two-threshold smoothing: seed a run above `high`, extend it down to `low`. a..."
     },
     {
@@ -1391,6 +1529,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_106",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "match predicted segments to true segments greedily by iou."
     },
     {
@@ -1401,6 +1540,7 @@
       "_origin": "ast",
       "id": "cdml_metrics_rationale_149",
       "community": 4,
+      "community_name": "metrics.py",
       "norm_label": "full report for a (n, t) score matrix against (n, t) labels."
     },
     {
@@ -1410,7 +1550,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "cdml_model",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "model.py"
     },
     {
@@ -1420,7 +1561,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "cdml_model_video_scalars",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "video_scalars()"
     },
     {
@@ -1431,6 +1573,7 @@
       "_origin": "ast",
       "id": "cdml_model_py_tensor",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "tensor"
     },
     {
@@ -1441,6 +1584,7 @@
       "_origin": "ast",
       "id": "cdml_model_frameencoder",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "frameencoder"
     },
     {
@@ -1451,6 +1595,7 @@
       "_origin": "ast",
       "id": "cdml_model_frameencoder_init",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".__init__()"
     },
     {
@@ -1461,6 +1606,7 @@
       "_origin": "ast",
       "id": "cdml_model_frameencoder_forward",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".forward()"
     },
     {
@@ -1471,6 +1617,7 @@
       "_origin": "ast",
       "id": "cdml_model_audioencoder",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "audioencoder"
     },
     {
@@ -1481,6 +1628,7 @@
       "_origin": "ast",
       "id": "cdml_model_audioencoder_init",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".__init__()"
     },
     {
@@ -1491,6 +1639,7 @@
       "_origin": "ast",
       "id": "cdml_model_audioencoder_forward",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".forward()"
     },
     {
@@ -1500,7 +1649,8 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "cdml_model_fadedetector",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "fadedetector"
     },
     {
@@ -1511,6 +1661,7 @@
       "_origin": "ast",
       "id": "cdml_model_fadedetector_init",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".__init__()"
     },
     {
@@ -1521,6 +1672,7 @@
       "_origin": "ast",
       "id": "cdml_model_fadedetector_forward",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": ".forward()"
     },
     {
@@ -1530,7 +1682,8 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "cdml_model_build_model",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "build_model()"
     },
     {
@@ -1541,6 +1694,7 @@
       "_origin": "ast",
       "id": "cdml_model_count_parameters",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "count_parameters()"
     },
     {
@@ -1551,6 +1705,7 @@
       "_origin": "ast",
       "id": "module",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "module"
     },
     {
@@ -1560,7 +1715,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "cdml_model_rationale_1",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "per-frame fade detector: shared cnn frame encoder -> bidirectional gru. three..."
     },
     {
@@ -1570,7 +1726,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "cdml_model_rationale_33",
-      "community": 5,
+      "community": 0,
+      "community_name": "train.py",
       "norm_label": "(b, t, h, w) float in [0,1] -> (b, t, 6) luminance statistics. deliberately..."
     },
     {
@@ -1581,6 +1738,7 @@
       "_origin": "ast",
       "id": "cdml_model_rationale_56",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "64x64 -> embedding, applied with shared weights to every frame."
     },
     {
@@ -1591,6 +1749,7 @@
       "_origin": "ast",
       "id": "cdml_model_rationale_84",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "widen the 17 db-scaled energy channels before fusion. measured on this dataset,..."
     },
     {
@@ -1601,17 +1760,19 @@
       "_origin": "ast",
       "id": "cdml_model_rationale_143",
       "community": 5,
+      "community_name": "AudioEncoder",
       "norm_label": "frames (b,t,h,w) float in [0,1], audio (b,t,n_audio) -> logits (b,t). one logit..."
     },
     {
-      "label": "cdml/preprocess.py",
+      "label": "preprocess.py",
       "file_type": "code",
       "source_file": "cdml/preprocess.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "cdml_preprocess",
       "community": 3,
-      "norm_label": "cdml/preprocess.py"
+      "community_name": "features.py",
+      "norm_label": "preprocess.py"
     },
     {
       "label": "parse_clip()",
@@ -1621,6 +1782,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_parse_clip",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "parse_clip()"
     },
     {
@@ -1631,6 +1793,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_load_episode_map",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "load_episode_map()"
     },
     {
@@ -1641,6 +1804,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_timestamp_to_frame",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "timestamp_to_frame()"
     },
     {
@@ -1651,6 +1815,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_load_labels",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "load_labels()"
     },
     {
@@ -1661,6 +1826,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_build_label_vector",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "build_label_vector()"
     },
     {
@@ -1671,6 +1837,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_py_ndarray",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "ndarray"
     },
     {
@@ -1681,27 +1848,30 @@
       "_origin": "ast",
       "id": "cdml_preprocess_main",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "main()"
     },
     {
-      "label": "Build the training cache. python -m cdml.preprocess --vids\u2026",
+      "label": "Build the training cache. python -m cdml.preprocess --vids /path/to/clips \\\u2026",
       "file_type": "rationale",
       "source_file": "cdml/preprocess.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "cdml_preprocess_rationale_1",
       "community": 3,
-      "norm_label": "build the training cache. python -m cdml.preprocess --vids..."
+      "community_name": "features.py",
+      "norm_label": "build the training cache. python -m cdml.preprocess --vids /path/to/clips \\..."
     },
     {
-      "label": "Optional `{clip_num: episode}` sidecar, for clips already renamed. `rename.py`\u2026",
+      "label": "Optional `{clip_num: episode}` sidecar, for clips already renamed. A previous\u2026",
       "file_type": "rationale",
       "source_file": "cdml/preprocess.py",
       "source_location": "L58",
       "_origin": "ast",
       "id": "cdml_preprocess_rationale_58",
       "community": 3,
-      "norm_label": "optional `{clip_num: episode}` sidecar, for clips already renamed. `rename.py`..."
+      "community_name": "features.py",
+      "norm_label": "optional `{clip_num: episode}` sidecar, for clips already renamed. a previous..."
     },
     {
       "label": "Per-frame 0/1 fade mask, clamped to the clip so it can never go ragged.",
@@ -1711,6 +1881,7 @@
       "_origin": "ast",
       "id": "cdml_preprocess_rationale_94",
       "community": 3,
+      "community_name": "features.py",
       "norm_label": "per-frame 0/1 fade mask, clamped to the clip so it can never go ragged."
     },
     {
@@ -1721,6 +1892,7 @@
       "_origin": "ast",
       "id": "cdml_review",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "review.py"
     },
     {
@@ -1731,6 +1903,7 @@
       "_origin": "ast",
       "id": "cdml_review_write_png",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "write_png()"
     },
     {
@@ -1741,6 +1914,7 @@
       "_origin": "ast",
       "id": "cdml_review_py_path",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "path"
     },
     {
@@ -1751,6 +1925,7 @@
       "_origin": "ast",
       "id": "cdml_review_py_ndarray",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "ndarray"
     },
     {
@@ -1761,6 +1936,7 @@
       "_origin": "ast",
       "id": "cdml_review_sheet",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "sheet()"
     },
     {
@@ -1771,6 +1947,7 @@
       "_origin": "ast",
       "id": "cdml_review_main",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "main()"
     },
     {
@@ -1781,6 +1958,7 @@
       "_origin": "ast",
       "id": "cdml_review_rationale_1",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "contact sheets for eyeballing a built cache. python -m cdml.review --cache..."
     },
     {
@@ -1791,6 +1969,7 @@
       "_origin": "ast",
       "id": "cdml_review_rationale_32",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "8-bit greyscale png from a (h, w) uint8 array."
     },
     {
@@ -1801,17 +1980,19 @@
       "_origin": "ast",
       "id": "cdml_review_rationale_49",
       "community": 6,
+      "community_name": "write_png",
       "norm_label": "tile n clips into one image, each row = sampled frames + label/audio bars."
     },
     {
-      "label": "cdml/train.py",
+      "label": "train.py",
       "file_type": "code",
       "source_file": "cdml/train.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "cdml_train",
       "community": 0,
-      "norm_label": "cdml/train.py"
+      "community_name": "train.py",
+      "norm_label": "train.py"
     },
     {
       "label": "set_seed()",
@@ -1821,6 +2002,7 @@
       "_origin": "ast",
       "id": "cdml_train_set_seed",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "set_seed()"
     },
     {
@@ -1831,6 +2013,7 @@
       "_origin": "ast",
       "id": "cdml_train_lr_lambda",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "lr_lambda()"
     },
     {
@@ -1841,6 +2024,7 @@
       "_origin": "ast",
       "id": "cdml_train_py_no_grad",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "no_grad"
     },
     {
@@ -1851,6 +2035,7 @@
       "_origin": "ast",
       "id": "cdml_train_predict",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "predict()"
     },
     {
@@ -1861,6 +2046,7 @@
       "_origin": "ast",
       "id": "cdml_train_main",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "main()"
     },
     {
@@ -1871,287 +2057,8 @@
       "_origin": "ast",
       "id": "cdml_train_rationale_1",
       "community": 0,
+      "community_name": "train.py",
       "norm_label": "train the fade detector. python -m cdml.train --cache cache --out runs/baseline..."
-    },
-    {
-      "label": "labels.py",
-      "file_type": "code",
-      "source_file": "labels.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "labels",
-      "community": 13,
-      "norm_label": "labels.py"
-    },
-    {
-      "label": "convert_timestamp()",
-      "file_type": "code",
-      "source_file": "labels.py",
-      "source_location": "L43",
-      "_origin": "ast",
-      "id": "labels_convert_timestamp",
-      "community": 13,
-      "norm_label": "convert_timestamp()"
-    },
-    {
-      "label": "get_black.py",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_get_black",
-      "community": 7,
-      "norm_label": "get_black.py"
-    },
-    {
-      "label": "ChapterParser",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "legacy_get_black_chapterparser",
-      "community": 7,
-      "norm_label": "chapterparser"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L23",
-      "_origin": "ast",
-      "id": "legacy_get_black_chapterparser_init",
-      "community": 7,
-      "norm_label": ".__init__()"
-    },
-    {
-      "label": "._extract_times()",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L29",
-      "_origin": "ast",
-      "id": "legacy_get_black_chapterparser_extract_times",
-      "community": 7,
-      "norm_label": "._extract_times()"
-    },
-    {
-      "label": "Popen",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "popen",
-      "community": 7,
-      "norm_label": "popen"
-    },
-    {
-      "label": ".detect_null_av()",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "legacy_get_black_chapterparser_detect_null_av",
-      "community": 7,
-      "norm_label": ".detect_null_av()"
-    },
-    {
-      "label": ".get_black_spots()",
-      "file_type": "code",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "legacy_get_black_chapterparser_get_black_spots",
-      "community": 7,
-      "norm_label": ".get_black_spots()"
-    },
-    {
-      "label": "legacy/preprocess.py",
-      "file_type": "code",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_preprocess",
-      "community": 8,
-      "norm_label": "legacy/preprocess.py"
-    },
-    {
-      "label": "preprocess_video()",
-      "file_type": "code",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "legacy_preprocess_preprocess_video",
-      "community": 8,
-      "norm_label": "preprocess_video()"
-    },
-    {
-      "label": "average_every_n()",
-      "file_type": "code",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L52",
-      "_origin": "ast",
-      "id": "legacy_preprocess_average_every_n",
-      "community": 8,
-      "norm_label": "average_every_n()"
-    },
-    {
-      "label": "preprocess_audio()",
-      "file_type": "code",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "legacy_preprocess_preprocess_audio",
-      "community": 8,
-      "norm_label": "preprocess_audio()"
-    },
-    {
-      "label": "save_as_npy()",
-      "file_type": "code",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L75",
-      "_origin": "ast",
-      "id": "legacy_preprocess_save_as_npy",
-      "community": 8,
-      "norm_label": "save_as_npy()"
-    },
-    {
-      "label": "rename.py",
-      "file_type": "code",
-      "source_file": "legacy/rename.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_rename",
-      "community": 15,
-      "norm_label": "rename.py"
-    },
-    {
-      "label": "run.py",
-      "file_type": "code",
-      "source_file": "legacy/run.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_run",
-      "community": 14,
-      "norm_label": "run.py"
-    },
-    {
-      "label": "predict_video()",
-      "file_type": "code",
-      "source_file": "legacy/run.py",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "legacy_run_predict_video",
-      "community": 14,
-      "norm_label": "predict_video()"
-    },
-    {
-      "label": "scan.py",
-      "file_type": "code",
-      "source_file": "legacy/scan.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_scan",
-      "community": 9,
-      "norm_label": "scan.py"
-    },
-    {
-      "label": "preprocess_video_batch()",
-      "file_type": "code",
-      "source_file": "legacy/scan.py",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "legacy_scan_preprocess_video_batch",
-      "community": 9,
-      "norm_label": "preprocess_video_batch()"
-    },
-    {
-      "label": "preprocess_audio_batch()",
-      "file_type": "code",
-      "source_file": "legacy/scan.py",
-      "source_location": "L41",
-      "_origin": "ast",
-      "id": "legacy_scan_preprocess_audio_batch",
-      "community": 9,
-      "norm_label": "preprocess_audio_batch()"
-    },
-    {
-      "label": "predict_video()",
-      "file_type": "code",
-      "source_file": "legacy/scan.py",
-      "source_location": "L46",
-      "_origin": "ast",
-      "id": "legacy_scan_predict_video",
-      "community": 9,
-      "norm_label": "predict_video()"
-    },
-    {
-      "label": "search.py",
-      "file_type": "code",
-      "source_file": "legacy/search.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_search",
-      "community": 10,
-      "norm_label": "search.py"
-    },
-    {
-      "label": "preprocess_video_batch()",
-      "file_type": "code",
-      "source_file": "legacy/search.py",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "legacy_search_preprocess_video_batch",
-      "community": 10,
-      "norm_label": "preprocess_video_batch()"
-    },
-    {
-      "label": "preprocess_audio_batch()",
-      "file_type": "code",
-      "source_file": "legacy/search.py",
-      "source_location": "L39",
-      "_origin": "ast",
-      "id": "legacy_search_preprocess_audio_batch",
-      "community": 10,
-      "norm_label": "preprocess_audio_batch()"
-    },
-    {
-      "label": "predict_video()",
-      "file_type": "code",
-      "source_file": "legacy/search.py",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "legacy_search_predict_video",
-      "community": 10,
-      "norm_label": "predict_video()"
-    },
-    {
-      "label": "legacy/train.py",
-      "file_type": "code",
-      "source_file": "legacy/train.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "legacy_train",
-      "community": 11,
-      "norm_label": "legacy/train.py"
-    },
-    {
-      "label": "build_model()",
-      "file_type": "code",
-      "source_file": "legacy/train.py",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "legacy_train_build_model",
-      "community": 11,
-      "norm_label": "build_model()"
-    },
-    {
-      "label": "train_model()",
-      "file_type": "code",
-      "source_file": "legacy/train.py",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "legacy_train_train_model",
-      "community": 11,
-      "norm_label": "train_model()"
     },
     {
       "label": "cdml",
@@ -2164,7 +2071,305 @@
       "_origin": "ast",
       "id": "pkg_cdml",
       "community": 16,
+      "community_name": "cdml",
       "norm_label": "cdml"
+    },
+    {
+      "label": "BRANCH_REPORT.md",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "branch_report",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "branch_report.md"
+    },
+    {
+      "label": "`pytorch-rewrite` Branch Report",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "branch_report_pytorch_rewrite_branch_report",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "`pytorch-rewrite` branch report"
+    },
+    {
+      "label": "Branch Summary",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "branch_report_branch_summary",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "branch summary"
+    },
+    {
+      "label": "New `cdml` Implementation",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "branch_report_new_cdml_implementation",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "new `cdml` implementation"
+    },
+    {
+      "label": "Old Implementation",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "branch_report_old_implementation",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "old implementation"
+    },
+    {
+      "label": "New Training Data",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "branch_report_new_training_data",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "new training data"
+    },
+    {
+      "label": "New Generated Artifacts",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "branch_report_new_generated_artifacts",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "new generated artifacts"
+    },
+    {
+      "label": "Bottom Line",
+      "file_type": "document",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "branch_report_bottom_line",
+      "community": 8,
+      "community_name": "`pytorch-rewrite` Branch Report",
+      "norm_label": "bottom line"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "commercial-detector-ml",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_commercial_detector_ml",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "commercial-detector-ml"
+    },
+    {
+      "label": "Writing the breaks back as chapters",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "readme_writing_the_breaks_back_as_chapters",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "writing the breaks back as chapters"
+    },
+    {
+      "label": "Layout",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "readme_layout",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "layout"
+    },
+    {
+      "label": "Results",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "readme_results",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "results"
+    },
+    {
+      "label": "Building a corpus",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L97",
+      "_origin": "ast",
+      "id": "readme_building_a_corpus",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "building a corpus"
+    },
+    {
+      "label": "cdml/README.md",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "cdml_readme",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "cdml/readme.md"
+    },
+    {
+      "label": "cdml \u2014 PyTorch commercial-break fade detector",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "cdml_readme_cdml_pytorch_commercial_break_fade_detector",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "cdml \u2014 pytorch commercial-break fade detector"
+    },
+    {
+      "label": "The finding that should drive the next round of work",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "cdml_readme_the_finding_that_should_drive_the_next_round_of_work",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "the finding that should drive the next round of work"
+    },
+    {
+      "label": "What changed, and why",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L86",
+      "_origin": "ast",
+      "id": "cdml_readme_what_changed_and_why",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "what changed, and why"
+    },
+    {
+      "label": "1. The audio features carried no loudness (the big one)",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "cdml_readme_1_the_audio_features_carried_no_loudness_the_big_one",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "1. the audio features carried no loudness (the big one)"
+    },
+    {
+      "label": "2. The model spent 97% of its parameters on a dense pixel projection",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "cdml_readme_2_the_model_spent_97_of_its_parameters_on_a_dense_pixel_projection",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "2. the model spent 97% of its parameters on a dense pixel projection"
+    },
+    {
+      "label": "3. Validation was measuring memorisation",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "cdml_readme_3_validation_was_measuring_memorisation",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "3. validation was measuring memorisation"
+    },
+    {
+      "label": "4. Silent data-misalignment risk",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "cdml_readme_4_silent_data_misalignment_risk",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "4. silent data-misalignment risk"
+    },
+    {
+      "label": "5. 5.0 GB of cache for 250 MB of data",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L165",
+      "_origin": "ast",
+      "id": "cdml_readme_5_5_0_gb_of_cache_for_250_mb_of_data",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "5. 5.0 gb of cache for 250 mb of data"
+    },
+    {
+      "label": "6. Augmentation bugs",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L174",
+      "_origin": "ast",
+      "id": "cdml_readme_6_augmentation_bugs",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "6. augmentation bugs"
+    },
+    {
+      "label": "7. Learning rate died two-fifths of the way in",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L189",
+      "_origin": "ast",
+      "id": "cdml_readme_7_learning_rate_died_two_fifths_of_the_way_in",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "7. learning rate died two-fifths of the way in"
+    },
+    {
+      "label": "8. Inference",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L194",
+      "_origin": "ast",
+      "id": "cdml_readme_8_inference",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "8. inference"
+    },
+    {
+      "label": "Evaluate honestly",
+      "file_type": "document",
+      "source_file": "cdml/README.md",
+      "source_location": "L209",
+      "_origin": "ast",
+      "id": "cdml_readme_evaluate_honestly",
+      "community": 7,
+      "community_name": "What changed, and why",
+      "norm_label": "evaluate honestly"
     }
   ],
   "links": [
@@ -3302,7 +3507,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L30",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -3362,7 +3567,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L30",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -3374,7 +3579,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L63",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_load_model",
@@ -4038,7 +4243,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4193,7 +4398,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4205,7 +4410,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L164",
+      "source_location": "L162",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -4359,7 +4564,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4372,7 +4577,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cdml/infer.py",
-      "source_location": "L82",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_scan",
@@ -4464,7 +4669,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4477,7 +4682,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "cdml/infer.py",
-      "source_location": "L83",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_scan",
@@ -4522,7 +4727,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L135",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4533,7 +4738,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L61",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4544,7 +4749,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L141",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4555,7 +4760,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L70",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4566,7 +4771,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L36",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4577,7 +4782,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L121",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4589,7 +4794,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4601,7 +4806,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4613,7 +4818,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L32",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4625,7 +4830,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L33",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4637,7 +4842,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L33",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer",
@@ -4671,10 +4876,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L37",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "cdml_infer_rationale_37",
+      "source": "cdml_infer_rationale_35",
       "target": "cdml_infer_stream_gray",
       "confidence_score": 1.0
     },
@@ -4683,7 +4888,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L79",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_scan",
@@ -4695,7 +4900,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L61",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_load_model",
@@ -4707,7 +4912,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L64",
+      "source_location": "L62",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_load_model",
@@ -4719,7 +4924,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L155",
+      "source_location": "L153",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -4755,7 +4960,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L154",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -4766,7 +4971,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L69",
+      "source_location": "L67",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
@@ -4779,7 +4984,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L165",
+      "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -4790,10 +4995,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L73",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "cdml_infer_rationale_73",
+      "source": "cdml_infer_rationale_71",
       "target": "cdml_infer_scan",
       "confidence_score": 1.0
     },
@@ -4802,7 +5007,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L70",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_scan",
@@ -4838,7 +5043,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L121",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_to_events",
@@ -4850,7 +5055,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L167",
+      "source_location": "L165",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -4862,7 +5067,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L122",
+      "source_location": "L120",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_to_events",
@@ -4874,7 +5079,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L125",
+      "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_to_events",
@@ -4910,7 +5115,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "cdml/infer.py",
-      "source_location": "L169",
+      "source_location": "L167",
       "weight": 1.0,
       "_origin": "ast",
       "source": "cdml_infer_main",
@@ -6565,273 +6770,279 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "labels.py",
-      "source_location": "L43",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "labels",
-      "target": "labels_convert_timestamp",
+      "source": "branch_report",
+      "target": "branch_report_pytorch_rewrite_branch_report",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L22",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black",
-      "target": "legacy_get_black_chapterparser",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_bottom_line",
       "confidence_score": 1.0
     },
     {
-      "relation": "method",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L59",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser",
-      "target": "legacy_get_black_chapterparser_detect_null_av",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_branch_summary",
       "confidence_score": 1.0
     },
     {
-      "relation": "method",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L29",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser",
-      "target": "legacy_get_black_chapterparser_extract_times",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_new_cdml_implementation",
       "confidence_score": 1.0
     },
     {
-      "relation": "method",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L65",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser",
-      "target": "legacy_get_black_chapterparser_get_black_spots",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_new_generated_artifacts",
       "confidence_score": 1.0
     },
     {
-      "relation": "method",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L23",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser",
-      "target": "legacy_get_black_chapterparser_init",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_new_training_data",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L63",
+      "source_file": "BRANCH_REPORT.md",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser_detect_null_av",
-      "target": "legacy_get_black_chapterparser_extract_times",
+      "source": "branch_report_pytorch_rewrite_branch_report",
+      "target": "branch_report_old_implementation",
       "confidence_score": 1.0
     },
     {
       "relation": "references",
-      "context": "parameter_type",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
-      "source_location": "L29",
+      "source_file": "README.md",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser_extract_times",
-      "target": "popen",
+      "source": "readme",
+      "target": "cdml_readme",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/get_black.py",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_commercial_detector_ml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_commercial_detector_ml",
+      "target": "readme_building_a_corpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_commercial_detector_ml",
+      "target": "readme_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_get_black_chapterparser_get_black_spots",
-      "target": "legacy_get_black_chapterparser_detect_null_av",
+      "source": "readme_commercial_detector_ml",
+      "target": "readme_results",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L52",
+      "source_file": "README.md",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_preprocess",
-      "target": "legacy_preprocess_average_every_n",
+      "source": "readme_commercial_detector_ml",
+      "target": "readme_writing_the_breaks_back_as_chapters",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L59",
+      "source_file": "cdml/README.md",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_preprocess",
-      "target": "legacy_preprocess_preprocess_audio",
+      "source": "cdml_readme",
+      "target": "cdml_readme_cdml_pytorch_commercial_break_fade_detector",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L9",
+      "source_file": "cdml/README.md",
+      "source_location": "L209",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_preprocess",
-      "target": "legacy_preprocess_preprocess_video",
+      "source": "cdml_readme_cdml_pytorch_commercial_break_fade_detector",
+      "target": "cdml_readme_evaluate_honestly",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L75",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "legacy_preprocess",
-      "target": "legacy_preprocess_save_as_npy",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "legacy/preprocess.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "legacy_preprocess_preprocess_audio",
-      "target": "legacy_preprocess_average_every_n",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "legacy/run.py",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "legacy_run",
-      "target": "legacy_run_predict_video",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "legacy/scan.py",
+      "source_file": "cdml/README.md",
       "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_scan",
-      "target": "legacy_scan_predict_video",
+      "source": "cdml_readme_cdml_pytorch_commercial_break_fade_detector",
+      "target": "cdml_readme_the_finding_that_should_drive_the_next_round_of_work",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/scan.py",
-      "source_location": "L41",
+      "source_file": "cdml/README.md",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_scan",
-      "target": "legacy_scan_preprocess_audio_batch",
+      "source": "cdml_readme_cdml_pytorch_commercial_break_fade_detector",
+      "target": "cdml_readme_what_changed_and_why",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/scan.py",
-      "source_location": "L22",
+      "source_file": "cdml/README.md",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_scan",
-      "target": "legacy_scan_preprocess_video_batch",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_1_the_audio_features_carried_no_loudness_the_big_one",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/search.py",
-      "source_location": "L44",
+      "source_file": "cdml/README.md",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_search",
-      "target": "legacy_search_predict_video",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_2_the_model_spent_97_of_its_parameters_on_a_dense_pixel_projection",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/search.py",
-      "source_location": "L39",
+      "source_file": "cdml/README.md",
+      "source_location": "L133",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_search",
-      "target": "legacy_search_preprocess_audio_batch",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_3_validation_was_measuring_memorisation",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/search.py",
-      "source_location": "L20",
+      "source_file": "cdml/README.md",
+      "source_location": "L149",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_search",
-      "target": "legacy_search_preprocess_video_batch",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_4_silent_data_misalignment_risk",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/train.py",
-      "source_location": "L7",
+      "source_file": "cdml/README.md",
+      "source_location": "L165",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_train",
-      "target": "legacy_train_build_model",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_5_5_0_gb_of_cache_for_250_mb_of_data",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/train.py",
-      "source_location": "L30",
+      "source_file": "cdml/README.md",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_train",
-      "target": "legacy_train_train_model",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_6_augmentation_bugs",
       "confidence_score": 1.0
     },
     {
-      "relation": "calls",
-      "context": "call",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "legacy/train.py",
-      "source_location": "L38",
+      "source_file": "cdml/README.md",
+      "source_location": "L189",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "legacy_train_train_model",
-      "target": "legacy_train_build_model",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_7_learning_rate_died_two_fifths_of_the_way_in",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "cdml/README.md",
+      "source_location": "L194",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "cdml_readme_what_changed_and_why",
+      "target": "cdml_readme_8_inference",
       "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "08e0f647b682c897c501801e232019d0474bea57"
+  "built_at_commit": "b2d517fd3b9ac3611c208295d5c5fe3576bb5426"
 }

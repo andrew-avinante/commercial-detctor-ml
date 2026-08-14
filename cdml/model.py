@@ -84,7 +84,7 @@ class AudioEncoder(nn.Module):
     """Widen the 17 dB-scaled energy channels before fusion.
 
     Measured on this dataset, ~90% of *negative* clips also contain a full
-    fade to black -- because `get_black.py` mined every clip from an ffmpeg
+    fade to black -- because the original clip miner selected every clip from an ffmpeg
     `blackdetect` hit. So the picture barely discriminates, and audio carries
     most of the signal. Fusing 17 audio dims straight against a 64-dim video
     embedding lets the video branch dominate the projection by width alone.
