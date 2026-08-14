@@ -69,8 +69,13 @@ def load_model(path: str, device: torch.device):
 @torch.no_grad()
 def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
          hop: int = CLIP_FRAMES // 2, batch_size: int = 16,
-         amp: bool = True) -> np.ndarray:
-    """Return a per-frame fade probability for the whole file."""
+         amp: bool = True, progress=None) -> np.ndarray:
+    """Return a per-frame fade probability for the whole file.
+
+    `progress`, if given, is called as `progress(frames_done, total_frames)`
+    after each batch. A full episode on CPU is minutes of silence otherwise,
+    which is indistinguishable from a hang to anything supervising this.
+    """
     frames = np.concatenate(list(stream_gray(video, size, FPS)), axis=0)
     n = frames.shape[0]
 
@@ -106,6 +111,9 @@ def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
         for s, p in zip(block, probs):
             total[s:s + CLIP_FRAMES] += p
             count[s:s + CLIP_FRAMES] += 1.0
+
+        if progress is not None:
+            progress(min(block[-1] + CLIP_FRAMES, n), n)
 
     return (total / np.maximum(count, 1.0))[:n]
 

@@ -39,6 +39,16 @@ python -m cdml.train     --cache cache_v2 --out runs/v1
 python -m cdml.infer     --model runs/v1/best.pt --video episode.mp4 --json out.json
 ```
 
+**Writing the breaks back into the file.** `cdml.mark_chapters` is `cdml.infer`
+plus a stream-copy remux: fades become chapter markers, nothing is re-encoded.
+It takes files or show directories, skips files that already have chapters, and
+can score itself against them with `--existing compare`.
+
+```bash
+python -m cdml.mark_chapters "/media/Shows/Example Show" --dry-run
+python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
+```
+
 ---
 
 ## The finding that should drive the next round of work

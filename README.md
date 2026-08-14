@@ -21,6 +21,39 @@ episode.mkv  00:23:46.186  34228 frames  ->  3 fade(s)
 All three land on the episode's real chapter marks (63.4s, 708.3s, 1367.4s).
 That episode was held out of training.
 
+## Writing the breaks back as chapters
+
+`cdml.mark_chapters` runs the same detector over a whole episode — or a whole
+show directory — and remuxes the file with chapter markers on the breaks. The
+streams are copied, never re-encoded.
+
+```bash
+python -m cdml.mark_chapters "/media/Shows/Example Show" --dry-run
+python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
+```
+
+The boundary goes in the *middle* of the fade, which is where a DVD mark sits
+(`--anchor start|end` to move it). Fades in the last 20 s are ignored — that
+one runs into the end credits and is not a break. A file that already has
+chapters is skipped, since in this corpus those chapters are the ground truth;
+`--existing replace` overrides it and `--existing compare` scores the detector
+against them instead of writing:
+
+```
+  s1e11.mkv  00:23:31.520  ->  3 fade(s), 4 chapter(s)
+    existing marks : 248.5  806.5  1379.0
+    detected       : 61.4  806.2  1378.7
+    00:13:26.167  matches mark 00:13:26.489  delta -0.32s
+    00:22:58.729  matches mark 00:22:58.978  delta -0.25s
+    00:01:01.396  FALSE POSITIVE (nearest mark 00:04:08.515, -187.1s)
+    00:04:08.515  MISSED mark
+    2/3 marks found, 1 extra detection(s)
+```
+
+Without `--in-place` the output is a sibling `<name>.chapters<ext>`;
+`--in-place` swaps the source atomically, and only after ffmpeg exits clean
+*and* the chapters read back out of the new file.
+
 ## Layout
 
 | path | |
