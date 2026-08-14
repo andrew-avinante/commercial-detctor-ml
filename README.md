@@ -8,7 +8,7 @@ pip install -r requirements.txt        # numpy + torch; needs ffmpeg on PATH
 # CUDA 12.x:
 #   pip install torch --index-url https://download.pytorch.org/whl/cu124
 
-python -m cdml.infer --model models/fade_detector_v2.pt --video episode.mkv
+python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
 ```
 
 ```
@@ -58,8 +58,8 @@ Without `--in-place` the output is a sibling `<name>.chapters<ext>`;
 
 | path | |
 |---|---|
-| `cdml/` | the PyTorch pipeline — see [`cdml/README.md`](cdml/README.md) |
-| `models/fade_detector_v2.pt` | the shipped detector, 225k parameters, 892 KB |
+| `cdml/` | detection and training package — see [`cdml/README.md`](cdml/README.md) |
+| `models/fade_detector.pt` | the shipped detector, 225k parameters, 892 KB |
 | `results/` | run reports, split, training history, chapter survey |
 | `review/` | contact sheets for eyeballing labels |
 
@@ -71,9 +71,8 @@ no episode spans train and test.
 
 | | test AP | frame F1 | event F1 | missed |
 |---|---|---|---|---|
-| previous corpus, same model | 0.3633 | 0.4471 | 0.4681 | 3 of 14 |
-| this corpus, **no model** (threshold rule) | 0.7792 | 0.7255 | 0.7782 | 9 of 123 |
-| **this corpus, model** | **0.9823** | **0.9654** | **0.9840** | **0 of 123** |
+| threshold baseline | 0.7792 | 0.7255 | 0.7782 | 9 of 123 |
+| **CDML detector** | **0.9823** | **0.9654** | **0.9840** | **0 of 123** |
 
 Generalisation to a show that was never trained on, leave-one-show-out:
 
@@ -103,12 +102,11 @@ a real fade.
 ```bash
 python -m cdml.chapters --shows "/media/Raw/Show A"   # survey, seconds
 python -m cdml.build_dataset --shows "/media/Raw/..." --out data/chapters --workers 5
-python -m cdml.build_dataset --out data/chapters --assemble --cache cache_v2
-python -m cdml.review  --cache cache_v2 --out review    # check the labels
-python -m cdml.baseline --cache cache_v2                # no-model reference
-python -m cdml.train   --cache cache_v2 --out runs/v2
+python -m cdml.build_dataset --out data/chapters --assemble --cache cache
+python -m cdml.review  --cache cache --out review       # check the labels
+python -m cdml.baseline --cache cache                   # no-model reference
+python -m cdml.train   --cache cache --out runs/detector
 ```
 
-`cdml.baseline` exists to keep the model honest: if it does not clearly beat a
-tuned threshold rule, the parameters are not earning their place. On the
-previous corpus it did not, which is what prompted the rewrite.
+`cdml.baseline` keeps the model honest: if it does not clearly beat a tuned
+threshold rule, the parameters are not earning their place.

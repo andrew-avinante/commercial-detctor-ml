@@ -12,7 +12,7 @@ authors = [{ name = "Andrew Avinante", email = "andrewavinante@gmail.com" }]
 
 # Inference only. Decoding is done by shelling out to ffmpeg/ffprobe, which are
 # system binaries rather than wheels, so they cannot be declared here -- see
-# `cdml.features` for why that pipeline replaced OpenCV and librosa.
+# `cdml.features` for the decoding pipeline.
 dependencies = [
     "numpy>=1.24",
     "torch>=2.4",

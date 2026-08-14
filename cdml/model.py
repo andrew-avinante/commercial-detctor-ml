@@ -1,25 +1,9 @@
 """Per-frame fade detector: shared CNN frame encoder -> bidirectional GRU.
 
-Three changes from the Keras model, in descending order of expected impact.
-
-1. The frame encoder is a small 2-D CNN with shared weights across time,
-   instead of feeding a flattened 16384-vector straight into an LSTM. The old
-   first layer alone was 4*(16384+128+1)*128 ~= 8.4M parameters -- 97% of the
-   network, spent on a dense projection that throws away spatial structure. On
-   296 training clips that is not a model, it is a memoriser.
-
-2. Six explicit luminance statistics are concatenated to the CNN embedding.
-   A fade to black *is* a luminance trajectory; per-frame mean, spread, peak,
-   dark-pixel fractions and inter-frame motion hand the temporal model the
-   signal directly rather than making it rediscover `frame.mean()` through a
-   recurrent bottleneck. They are computed here, on GPU, from whatever pixels
-   arrive -- so pixel augmentations stay consistent with them for free.
-
-3. The GRU is bidirectional. This is offline detection over a complete 8-second
-   window, so the second half of a fade is legitimately available when scoring
-   the first half. A causal LSTM gives that up for nothing.
-
-Result is ~230k parameters (about 1 MB) against the original ~8.5M / 109 MB.
+The model encodes each grayscale frame with a shared 2-D CNN, then combines the
+embedding with six luminance statistics and 17 dB-scaled audio-energy features.
+A bidirectional GRU scores every frame in the complete 8-second window. The
+architecture has roughly 230k parameters and produces one logit per frame.
 """
 from __future__ import annotations
 
@@ -83,11 +67,9 @@ class FrameEncoder(nn.Module):
 class AudioEncoder(nn.Module):
     """Widen the 17 dB-scaled energy channels before fusion.
 
-    Measured on this dataset, ~90% of *negative* clips also contain a full
-    fade to black -- because the original clip miner selected every clip from an ffmpeg
-    `blackdetect` hit. So the picture barely discriminates, and audio carries
-    most of the signal. Fusing 17 audio dims straight against a 64-dim video
-    embedding lets the video branch dominate the projection by width alone.
+    Fusing 17 audio dimensions directly against a 64-dimensional video embedding
+    would underweight the audio signal. This projection balances both modalities
+    before temporal modeling.
     """
 
     def __init__(self, n_audio: int = N_AUDIO, out_dim: int = 32):

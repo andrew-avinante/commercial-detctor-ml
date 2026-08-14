@@ -1,15 +1,10 @@
 """Cache loading, leakage-free splitting, and on-GPU augmentation.
 
-The whole cache is ~250 MB, so it is loaded once and parked in VRAM. There is
-no DataLoader, no worker processes, and no per-sample `np.load` -- the old
-generator re-read a 25 MB float64 array per clip per epoch, which made the run
-disk-bound rather than compute-bound.
+The whole cache is ~250 MB, so it is loaded once and parked in VRAM. This keeps
+training compute-bound without worker processes or per-sample disk reads.
 
-Splitting is grouped. The old `train_test_split` shuffled clips at random, so
-the four augmented copies of a clip written to disk by `preprocess.py` could
-land on both sides of the split, and validation scores measured memorisation.
-Here augmentation happens on-the-fly (no duplicate rows to leak) and the split
-groups by episode when the filename records it, falling back to clip id.
+Splits are grouped by episode when the filename records it, falling back to clip
+id. Augmentation happens on the fly, so transformed copies cannot cross splits.
 """
 from __future__ import annotations
 
@@ -131,20 +126,9 @@ def augment(frames: torch.Tensor, audio: torch.Tensor, labels: torch.Tensor,
             ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     """Batch-level augmentation, entirely on GPU.
 
-    Replaces the old approach of writing four augmented copies of every clip to
-    disk: those were fixed (the model saw the same four variants every epoch),
-    they quadrupled an already 5 GB cache, and they leaked across the split.
-
-    Notes on what changed substantively:
-
-    * Horizontal flip only. The old code also flipped vertically (`orientation`
-      0), which produces upside-down footage that never occurs at inference.
-    * Noise is added in float and clamped. The old `add_gausian_noise` drew from
-      `N(0, 10)` then cast to `uint8`, so every negative sample wrapped around to
-      ~246-255 and `cv2.add` saturated it to white -- salt noise, not Gaussian.
-    * Audio gain is an additive dB offset, which is exactly what a gain change
-      is on the dB-scaled features from `features.audio_features`. The old
-      pipeline pitch-shifted a 24 Hz signal, which is not a meaningful operation.
+    Each batch receives horizontal flips, temporal jitter, bounded pixel noise,
+    gamma jitter, and an additive dB audio gain. Frame, audio, and label jitter
+    always use the same temporal offsets.
     """
     b, t = labels.shape
     dev = frames.device
