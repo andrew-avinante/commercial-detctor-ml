@@ -1,0 +1,1539 @@
+[
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e1",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e1.mkv",
+    "duration": 1234.19,
+    "chapter_bounds": [
+      60.64,
+      618.45,
+      1175.88
+    ],
+    "usable_marks": [
+      60.64,
+      618.45,
+      1175.88
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e10",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e10.mkv",
+    "duration": 1233.36,
+    "chapter_bounds": [
+      60.6,
+      611.86,
+      1174.38,
+      1231.94
+    ],
+    "usable_marks": [
+      60.6,
+      611.86,
+      1174.38
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e11",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e11.mkv",
+    "duration": 1233.19,
+    "chapter_bounds": [
+      60.6,
+      584.63,
+      1174.51
+    ],
+    "usable_marks": [
+      60.6,
+      584.63,
+      1174.51
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e12",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e12.mkv",
+    "duration": 1235.32,
+    "chapter_bounds": [
+      60.48,
+      616.2,
+      1176.51,
+      1233.9
+    ],
+    "usable_marks": [
+      60.48,
+      616.2,
+      1176.51
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e13",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e13.mkv",
+    "duration": 1234.65,
+    "chapter_bounds": [
+      60.6,
+      701.91,
+      1175.8
+    ],
+    "usable_marks": [
+      60.6,
+      701.91,
+      1175.8
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e2",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e2.mkv",
+    "duration": 1234.65,
+    "chapter_bounds": [
+      61.64,
+      591.59,
+      1176.59
+    ],
+    "usable_marks": [
+      61.64,
+      591.59,
+      1176.59
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e3",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e3.mkv",
+    "duration": 1237.94,
+    "chapter_bounds": [
+      60.81,
+      670.09,
+      1179.89
+    ],
+    "usable_marks": [
+      60.81,
+      670.09,
+      1179.89
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e4",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e4.mkv",
+    "duration": 1233.57,
+    "chapter_bounds": [
+      60.48,
+      747.37,
+      1174.8
+    ],
+    "usable_marks": [
+      60.48,
+      747.37,
+      1174.8
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e5",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e5.mkv",
+    "duration": 1236.73,
+    "chapter_bounds": [
+      61.64,
+      625.37,
+      1178.14
+    ],
+    "usable_marks": [
+      61.64,
+      625.37,
+      1178.14
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e6",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e6.mkv",
+    "duration": 1235.57,
+    "chapter_bounds": [
+      60.6,
+      599.52,
+      1177.22
+    ],
+    "usable_marks": [
+      60.6,
+      599.52,
+      1177.22
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e7",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e7.mkv",
+    "duration": 1231.73,
+    "chapter_bounds": [
+      60.6,
+      591.76,
+      1173.51
+    ],
+    "usable_marks": [
+      60.6,
+      591.76,
+      1173.51
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e8",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e8.mkv",
+    "duration": 1235.28,
+    "chapter_bounds": [
+      60.48,
+      658.99,
+      1177.26,
+      1233.86
+    ],
+    "usable_marks": [
+      60.48,
+      658.99,
+      1177.26
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s1e9",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s1e9.mkv",
+    "duration": 1235.73,
+    "chapter_bounds": [
+      60.64,
+      616.41,
+      1177.72
+    ],
+    "usable_marks": [
+      60.64,
+      616.41,
+      1177.72
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e1",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e1.mkv",
+    "duration": 1234.23,
+    "chapter_bounds": [
+      60.64,
+      783.24,
+      1173.09,
+      1233.36
+    ],
+    "usable_marks": [
+      60.64,
+      783.24,
+      1173.09
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e2",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e2.mkv",
+    "duration": 1235.28,
+    "chapter_bounds": [
+      60.64,
+      677.01,
+      1173.38,
+      1234.27
+    ],
+    "usable_marks": [
+      60.64,
+      677.01,
+      1173.38
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e3",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e3.mkv",
+    "duration": 1238.28,
+    "chapter_bounds": [
+      60.64,
+      574.87,
+      1176.01,
+      1237.11
+    ],
+    "usable_marks": [
+      60.64,
+      574.87,
+      1176.01
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e4",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e4.mkv",
+    "duration": 1240.28,
+    "chapter_bounds": [
+      60.64,
+      651.19,
+      1178.55,
+      1239.07
+    ],
+    "usable_marks": [
+      60.64,
+      651.19,
+      1178.55
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e5",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e5.mkv",
+    "duration": 1237.28,
+    "chapter_bounds": [
+      60.64,
+      512.35,
+      1175.42,
+      1236.49
+    ],
+    "usable_marks": [
+      60.64,
+      512.35,
+      1175.42
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e6",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e6.mkv",
+    "duration": 1237.28,
+    "chapter_bounds": [
+      60.64,
+      620.24,
+      1175.47,
+      1236.11
+    ],
+    "usable_marks": [
+      60.64,
+      620.24,
+      1175.47
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e7",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e7.mkv",
+    "duration": 1235.28,
+    "chapter_bounds": [
+      60.64,
+      643.27,
+      1173.05,
+      1233.98
+    ],
+    "usable_marks": [
+      60.64,
+      643.27,
+      1173.05
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "Thundarr the Barbarian",
+    "episode": "s2e8",
+    "path": "/mnt/n/MediaProcessing/Raw/Thundarr the Barbarian/s2e8.mkv",
+    "duration": 1238.28,
+    "chapter_bounds": [
+      60.64,
+      606.27,
+      1177.43,
+      1237.4
+    ],
+    "usable_marks": [
+      60.64,
+      606.27,
+      1177.43
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e1",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e1.mkv",
+    "duration": 1414.05,
+    "chapter_bounds": [
+      252.12,
+      812.98,
+      1381.68,
+      1413.55
+    ],
+    "usable_marks": [
+      252.12,
+      812.98,
+      1381.68
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e10",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e10.mkv",
+    "duration": 1418.48,
+    "chapter_bounds": [
+      237.54,
+      881.2,
+      1386.45,
+      1417.98
+    ],
+    "usable_marks": [
+      237.54,
+      881.2,
+      1386.45
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e11",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e11.mkv",
+    "duration": 1411.52,
+    "chapter_bounds": [
+      248.51,
+      806.49,
+      1378.98,
+      1411.01
+    ],
+    "usable_marks": [
+      248.51,
+      806.49,
+      1378.98
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e12",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e12.mkv",
+    "duration": 1419.55,
+    "chapter_bounds": [
+      221.05,
+      824.99,
+      1386.97,
+      1419.05
+    ],
+    "usable_marks": [
+      221.05,
+      824.99,
+      1386.97
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e13",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e13.mkv",
+    "duration": 1418.45,
+    "chapter_bounds": [
+      244.98,
+      696.36,
+      1385.42,
+      1417.95
+    ],
+    "usable_marks": [
+      244.98,
+      696.36,
+      1385.42
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e2",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e2.mkv",
+    "duration": 1414.85,
+    "chapter_bounds": [
+      177.54,
+      649.72,
+      1381.98,
+      1413.85
+    ],
+    "usable_marks": [
+      177.54,
+      649.72,
+      1381.98
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e3",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e3.mkv",
+    "duration": 1424.92,
+    "chapter_bounds": [
+      171.3,
+      776.19,
+      1392.19,
+      1424.26
+    ],
+    "usable_marks": [
+      171.3,
+      776.19,
+      1392.19
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e4",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e4.mkv",
+    "duration": 1416.55,
+    "chapter_bounds": [
+      221.05,
+      896.65,
+      1383.72,
+      1416.05
+    ],
+    "usable_marks": [
+      221.05,
+      896.65,
+      1383.72
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e5",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e5.mkv",
+    "duration": 1418.62,
+    "chapter_bounds": [
+      266.97,
+      856.72,
+      1386.28,
+      1418.12
+    ],
+    "usable_marks": [
+      266.97,
+      856.72,
+      1386.28
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e6",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e6.mkv",
+    "duration": 1418.56,
+    "chapter_bounds": [
+      197.36,
+      762.56,
+      1386.38,
+      1418.05
+    ],
+    "usable_marks": [
+      197.36,
+      762.56,
+      1386.38
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e7",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e7.mkv",
+    "duration": 1417.55,
+    "chapter_bounds": [
+      300.5,
+      856.99,
+      1385.02,
+      1417.05
+    ],
+    "usable_marks": [
+      300.5,
+      856.99,
+      1385.02
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e8",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e8.mkv",
+    "duration": 1419.02,
+    "chapter_bounds": [
+      202.37,
+      838.27,
+      1386.99,
+      1418.52
+    ],
+    "usable_marks": [
+      202.37,
+      838.27,
+      1386.99
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The 13 Ghost of Scooby-Doo",
+    "episode": "s1e9",
+    "path": "/mnt/n/MediaProcessing/Raw/The 13 Ghost of Scooby-Doo/s1e9.mkv",
+    "duration": 1421.52,
+    "chapter_bounds": [
+      191.59,
+      806.01,
+      1389.79,
+      1421.02
+    ],
+    "usable_marks": [
+      191.59,
+      806.01,
+      1389.79
+    ],
+    "dropped_tail_marks": 1
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e1",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e1.mkv",
+    "duration": 1535.0,
+    "chapter_bounds": [
+      67.0,
+      144.68,
+      752.69,
+      1459.99,
+      1501.37
+    ],
+    "usable_marks": [
+      67.0,
+      144.68,
+      752.69,
+      1459.99,
+      1501.37
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e10",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e10.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.0,
+      163.03,
+      755.35,
+      1444.98,
+      1499.03
+    ],
+    "usable_marks": [
+      67.0,
+      163.03,
+      755.35,
+      1444.98,
+      1499.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e11",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e11.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.33,
+      138.34,
+      702.03,
+      1457.99,
+      1500.7
+    ],
+    "usable_marks": [
+      67.33,
+      138.34,
+      702.03,
+      1457.99,
+      1500.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e12",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e12.mkv",
+    "duration": 1536.0,
+    "chapter_bounds": [
+      67.0,
+      169.04,
+      829.86,
+      1451.65,
+      1502.97
+    ],
+    "usable_marks": [
+      67.0,
+      169.04,
+      829.86,
+      1451.65,
+      1502.97
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e13",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e13.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.0,
+      132.33,
+      706.37,
+      1458.32,
+      1499.53
+    ],
+    "usable_marks": [
+      67.0,
+      132.33,
+      706.37,
+      1458.32,
+      1499.53
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e14",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e14.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.5,
+      180.05,
+      685.35,
+      1442.04,
+      1501.87
+    ],
+    "usable_marks": [
+      67.5,
+      180.05,
+      685.35,
+      1442.04,
+      1501.87
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e15",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e15.mkv",
+    "duration": 1533.0,
+    "chapter_bounds": [
+      67.17,
+      172.37,
+      860.33,
+      1463.33,
+      1500.7
+    ],
+    "usable_marks": [
+      67.17,
+      172.37,
+      860.33,
+      1463.33,
+      1500.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e16",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e16.mkv",
+    "duration": 1536.0,
+    "chapter_bounds": [
+      67.1,
+      124.99,
+      858.99,
+      1469.33,
+      1502.97
+    ],
+    "usable_marks": [
+      67.1,
+      124.99,
+      858.99,
+      1469.33,
+      1502.97
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e17",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e17.mkv",
+    "duration": 1529.99,
+    "chapter_bounds": [
+      67.0,
+      146.68,
+      681.01,
+      1470.0,
+      1497.7
+    ],
+    "usable_marks": [
+      67.0,
+      146.68,
+      681.01,
+      1470.0,
+      1497.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e18",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e18.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.0,
+      164.03,
+      893.36,
+      1439.04,
+      1499.36
+    ],
+    "usable_marks": [
+      67.0,
+      164.03,
+      893.36,
+      1439.04,
+      1499.36
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e19",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e19.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.17,
+      157.02,
+      700.53,
+      1463.33,
+      1501.03
+    ],
+    "usable_marks": [
+      67.17,
+      157.02,
+      700.53,
+      1463.33,
+      1501.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e2",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e2.mkv",
+    "duration": 1533.0,
+    "chapter_bounds": [
+      67.0,
+      141.51,
+      755.35,
+      1457.32,
+      1499.53
+    ],
+    "usable_marks": [
+      67.0,
+      141.51,
+      755.35,
+      1457.32,
+      1499.53
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e20",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e20.mkv",
+    "duration": 1533.0,
+    "chapter_bounds": [
+      67.33,
+      133.5,
+      810.01,
+      1473.34,
+      1500.37
+    ],
+    "usable_marks": [
+      67.33,
+      133.5,
+      810.01,
+      1473.34,
+      1500.37
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e21",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e21.mkv",
+    "duration": 1533.0,
+    "chapter_bounds": [
+      67.17,
+      174.37,
+      783.98,
+      1448.31,
+      1500.7
+    ],
+    "usable_marks": [
+      67.17,
+      174.37,
+      783.98,
+      1448.31,
+      1500.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e22",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e22.mkv",
+    "duration": 1529.99,
+    "chapter_bounds": [
+      68.0,
+      145.35,
+      731.66,
+      1432.53,
+      1497.03
+    ],
+    "usable_marks": [
+      68.0,
+      145.35,
+      731.66,
+      1432.53,
+      1497.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e23",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e23.mkv",
+    "duration": 1531.0,
+    "chapter_bounds": [
+      67.0,
+      151.52,
+      758.02,
+      1455.82,
+      1498.86
+    ],
+    "usable_marks": [
+      67.0,
+      151.52,
+      758.02,
+      1455.82,
+      1498.86
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e24",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e24.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.33,
+      199.0,
+      672.0,
+      1473.0,
+      1501.03
+    ],
+    "usable_marks": [
+      67.33,
+      199.0,
+      672.0,
+      1473.0,
+      1501.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e25",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e25.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.17,
+      177.04,
+      827.03,
+      1461.99,
+      1500.03
+    ],
+    "usable_marks": [
+      67.17,
+      177.04,
+      827.03,
+      1461.99,
+      1500.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e3",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e3.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.0,
+      169.37,
+      789.99,
+      1461.33,
+      1501.37
+    ],
+    "usable_marks": [
+      67.0,
+      169.37,
+      789.99,
+      1461.33,
+      1501.37
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e4",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e4.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.0,
+      159.53,
+      725.32,
+      1475.01,
+      1499.7
+    ],
+    "usable_marks": [
+      67.0,
+      159.53,
+      725.32,
+      1475.01,
+      1499.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e5",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e5.mkv",
+    "duration": 1532.0,
+    "chapter_bounds": [
+      67.0,
+      156.02,
+      824.02,
+      1465.66,
+      1500.03
+    ],
+    "usable_marks": [
+      67.0,
+      156.02,
+      824.02,
+      1465.66,
+      1500.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e6",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e6.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.0,
+      216.68,
+      793.99,
+      1439.7,
+      1501.03
+    ],
+    "usable_marks": [
+      67.0,
+      216.68,
+      793.99,
+      1439.7,
+      1501.03
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e7",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e7.mkv",
+    "duration": 1486.02,
+    "chapter_bounds": [
+      68.0,
+      297.03,
+      874.01,
+      1452.48
+    ],
+    "usable_marks": [
+      68.0,
+      297.03,
+      874.01,
+      1452.48
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e8",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e8.mkv",
+    "duration": 1535.0,
+    "chapter_bounds": [
+      67.0,
+      130.33,
+      620.52,
+      1424.69,
+      1502.47
+    ],
+    "usable_marks": [
+      67.0,
+      130.33,
+      620.52,
+      1424.69,
+      1502.47
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "The Brady Bunch",
+    "episode": "s1e9",
+    "path": "/mnt/n/MediaProcessing/Raw/The Brady Bunch/s1e9.mkv",
+    "duration": 1534.0,
+    "chapter_bounds": [
+      67.0,
+      198.0,
+      853.49,
+      1464.0,
+      1501.37
+    ],
+    "usable_marks": [
+      67.0,
+      198.0,
+      853.49,
+      1464.0,
+      1501.37
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "bonus",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/bonus.mkv",
+    "duration": 1394.31,
+    "chapter_bounds": [
+      18.06,
+      516.43,
+      759.55,
+      920.46,
+      1327.24
+    ],
+    "usable_marks": [
+      18.06,
+      516.43,
+      759.55,
+      920.46,
+      1327.24
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e1",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e1.mkv",
+    "duration": 1394.2,
+    "chapter_bounds": [
+      62.98,
+      725.47,
+      1336.04
+    ],
+    "usable_marks": [
+      62.98,
+      725.47,
+      1336.04
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e10",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e10.mkv",
+    "duration": 1422.93,
+    "chapter_bounds": [
+      62.98,
+      717.93,
+      1365.7
+    ],
+    "usable_marks": [
+      62.98,
+      717.93,
+      1365.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e11",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e11.mkv",
+    "duration": 1425.35,
+    "chapter_bounds": [
+      62.81,
+      703.7,
+      1367.53
+    ],
+    "usable_marks": [
+      62.81,
+      703.7,
+      1367.53
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e12",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e12.mkv",
+    "duration": 1426.19,
+    "chapter_bounds": [
+      63.4,
+      708.29,
+      1367.45
+    ],
+    "usable_marks": [
+      63.4,
+      708.29,
+      1367.45
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e13",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e13.mkv",
+    "duration": 1423.89,
+    "chapter_bounds": [
+      63.31,
+      700.32,
+      1366.57
+    ],
+    "usable_marks": [
+      63.31,
+      700.32,
+      1366.57
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e14",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e14.mkv",
+    "duration": 1432.36,
+    "chapter_bounds": [
+      63.06,
+      727.35,
+      1373.75
+    ],
+    "usable_marks": [
+      63.06,
+      727.35,
+      1373.75
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e15",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e15.mkv",
+    "duration": 1433.43,
+    "chapter_bounds": [
+      63.31,
+      718.01,
+      1375.71
+    ],
+    "usable_marks": [
+      63.31,
+      718.01,
+      1375.71
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e16",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e16.mkv",
+    "duration": 1440.66,
+    "chapter_bounds": [
+      63.06,
+      713.92,
+      1383.26
+    ],
+    "usable_marks": [
+      63.06,
+      713.92,
+      1383.26
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e2",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e2.mkv",
+    "duration": 1419.46,
+    "chapter_bounds": [
+      62.98,
+      730.06,
+      1360.9
+    ],
+    "usable_marks": [
+      62.98,
+      730.06,
+      1360.9
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e3",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e3.mkv",
+    "duration": 1429.44,
+    "chapter_bounds": [
+      63.02,
+      724.64,
+      1372.12
+    ],
+    "usable_marks": [
+      63.02,
+      724.64,
+      1372.12
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e4",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e4.mkv",
+    "duration": 1413.58,
+    "chapter_bounds": [
+      62.98,
+      683.06,
+      1353.85
+    ],
+    "usable_marks": [
+      62.98,
+      683.06,
+      1353.85
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e5",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e5.mkv",
+    "duration": 1433.06,
+    "chapter_bounds": [
+      62.31,
+      693.57,
+      1374.16
+    ],
+    "usable_marks": [
+      62.31,
+      693.57,
+      1374.16
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e6",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e6.mkv",
+    "duration": 1429.85,
+    "chapter_bounds": [
+      63.23,
+      724.77,
+      1372.54
+    ],
+    "usable_marks": [
+      63.23,
+      724.77,
+      1372.54
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e7",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e7.mkv",
+    "duration": 1435.64,
+    "chapter_bounds": [
+      62.98,
+      704.41,
+      1378.0
+    ],
+    "usable_marks": [
+      62.98,
+      704.41,
+      1378.0
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e8",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e8.mkv",
+    "duration": 1431.1,
+    "chapter_bounds": [
+      62.98,
+      704.25,
+      1372.62
+    ],
+    "usable_marks": [
+      62.98,
+      704.25,
+      1372.62
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s1e9",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s1e9.mkv",
+    "duration": 1424.02,
+    "chapter_bounds": [
+      62.98,
+      718.38,
+      1365.7
+    ],
+    "usable_marks": [
+      62.98,
+      718.38,
+      1365.7
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e1",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e1.mkv",
+    "duration": 1439.83,
+    "chapter_bounds": [
+      62.98,
+      722.39,
+      1382.59
+    ],
+    "usable_marks": [
+      62.98,
+      722.39,
+      1382.59
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e2",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e2.mkv",
+    "duration": 1438.33,
+    "chapter_bounds": [
+      62.27,
+      720.43,
+      1380.75
+    ],
+    "usable_marks": [
+      62.27,
+      720.43,
+      1380.75
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e3",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e3.mkv",
+    "duration": 1428.3,
+    "chapter_bounds": [
+      62.27,
+      706.33,
+      1370.91
+    ],
+    "usable_marks": [
+      62.27,
+      706.33,
+      1370.91
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e4",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e4.mkv",
+    "duration": 1446.16,
+    "chapter_bounds": [
+      62.98,
+      702.66,
+      1388.85
+    ],
+    "usable_marks": [
+      62.98,
+      702.66,
+      1388.85
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e5",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e5.mkv",
+    "duration": 1445.11,
+    "chapter_bounds": [
+      62.98,
+      716.05,
+      1387.55
+    ],
+    "usable_marks": [
+      62.98,
+      716.05,
+      1387.55
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e7",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e7.mkv",
+    "duration": 1446.21,
+    "chapter_bounds": [
+      62.27,
+      727.1,
+      1387.8
+    ],
+    "usable_marks": [
+      62.27,
+      727.1,
+      1387.8
+    ],
+    "dropped_tail_marks": 0
+  },
+  {
+    "show": "Scoobys All-Star Laff-A-Lympics",
+    "episode": "s2e8",
+    "path": "/mnt/n/MediaProcessing/Raw/Scoobys All-Star Laff-A-Lympics/s2e8.mkv",
+    "duration": 1446.78,
+    "chapter_bounds": [
+      62.98,
+      724.85,
+      1389.3
+    ],
+    "usable_marks": [
+      62.98,
+      724.85,
+      1389.3
+    ],
+    "dropped_tail_marks": 0
+  }
+]
