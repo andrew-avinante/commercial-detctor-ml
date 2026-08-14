@@ -193,8 +193,7 @@ poetry.toml
 
 # cdml artifacts. The caches are multi-GB arrays and the run directories are
 # regenerable; `results/` and `models/` hold the small, useful parts of both.
-cache/
-cache_v2/
+cache*/
 data/
 runs/
 *.npy

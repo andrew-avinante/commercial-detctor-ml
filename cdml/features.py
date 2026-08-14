@@ -1,14 +1,9 @@
 """Decoding and audio feature extraction.
 
-Decoding goes through ffmpeg pipes rather than OpenCV/librosa: it is one
-dependency instead of two, it is faster for the sequential reads we do, and it
-lets inference stream a whole episode without seeking.
-
-The audio side is where the old pipeline lost the signal. `librosa.load(sr=24)`
-resampled the *waveform* to 24 Hz, which low-passes everything above 12 Hz into
-noise and leaves a zero-centred signal that carries no loudness. Fades are a
-loudness phenomenon, so we keep the audio at 24 kHz and reduce it to per-frame
-energy: log-RMS in dBFS plus 16 mel bands, also in dB.
+Decoding uses ffmpeg pipes for efficient sequential reads and full-episode
+streaming. Audio remains at 24 kHz and is reduced to per-frame energy:
+log-RMS in dBFS plus 16 mel bands, also in dB. This preserves the loudness
+signal that accompanies a fade to black.
 
 dB matters twice over. It is the scale on which a fade-out is roughly linear,
 and it makes a gain change a simple additive offset, which is what makes the
@@ -128,10 +123,8 @@ def _frame(x: np.ndarray, n_frames: int) -> np.ndarray:
 def audio_features(wav: np.ndarray, n_frames: int) -> np.ndarray:
     """(n_frames, 1 + N_MELS) float32 of dB-scaled energies, normalised to ~[-1, 0].
 
-    Absolute level is preserved on purpose. The old pipeline called
-    `librosa.util.normalize`, which rescales every clip to peak 1.0 and so
-    destroys the difference between "quiet scene" and "faded to silence" -- the
-    exact distinction this model exists to make.
+    Absolute level is preserved so quiet scenes remain distinguishable from
+    fades to silence.
     """
     if wav.size == 0:
         return np.full((n_frames, 1 + N_MELS), DB_FLOOR / -DB_FLOOR * -1.0, np.float32)
@@ -157,9 +150,7 @@ def clip_features(path: str, n_frames: int, size: int = IMG_SIZE,
     if frames.shape[0] >= n_frames:
         frames = frames[:n_frames]
     else:
-        # Pad short clips by holding the last frame. The old code padded with
-        # pure *white* frames, injecting a hard luminance step at the tail that
-        # looks nothing like anything in real footage.
+        # Hold the final frame so padding does not introduce a luminance step.
         hold = np.repeat(frames[-1:], n_frames - frames.shape[0], axis=0)
         frames = np.concatenate([frames, hold], axis=0)
 

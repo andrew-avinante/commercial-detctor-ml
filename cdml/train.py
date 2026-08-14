@@ -2,17 +2,11 @@
 
     python -m cdml.train --cache cache --out runs/baseline
 
-Changes from the Keras training loop, beyond the port itself:
-
-* Early stopping watched `loss` (training loss), so it measured fit, not
-  generalisation, and `restore_best_weights` restored the most overfit epoch.
-  Here it watches validation average precision.
-* The LR schedule multiplied by 0.1 every 10 epochs, reaching 1e-6 by epoch 30
-  -- the last 20 of 50 epochs did nothing. Replaced with warmup + cosine decay.
-* Class imbalance is handled with `pos_weight` instead of being ignored.
-* A held-out test split is scored once, at the end, with the threshold chosen
-  on validation. The old script had no test set at all.
-* AMP + the whole dataset in VRAM. On a 3060 an epoch is seconds, not minutes.
+Training uses grouped train/validation/test splits, validation average precision
+for early stopping, warmup plus cosine learning-rate decay, and `pos_weight` for
+class imbalance. The held-out test split is scored once with a threshold chosen
+on validation. AMP and a VRAM-resident cache keep epochs short on compatible
+GPUs.
 """
 from __future__ import annotations
 

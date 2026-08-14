@@ -10,18 +10,9 @@ Writes four files into --out:
     labels.npy   (N, 192)         uint8
     meta.json    per-clip id, episode, source path
 
-The whole 311-clip set lands at ~250 MB instead of 5.3 GB, because frames stay
-uint8 at 64x64 instead of float64 at 128x128 flattened. That is what lets
-`train.py` hold the entire dataset in VRAM and drop the data loader entirely.
-
-Two correctness fixes live here rather than in the model:
-
-* Clips are paired with their labels by parsed clip number. The old pipeline
-  built three independent `glob.glob` lists and zipped them positionally, which
-  silently mistrains the moment the three orderings disagree.
-* Per-frame video scalars are NOT cached. They are derived from the frames on
-  GPU at training time, so they can never go stale relative to an augmentation
-  that changes pixel values.
+Frames remain uint8 at 64x64, so the cache is compact enough to reside in VRAM
+during training. Clips pair with labels by parsed clip number, and per-frame
+video scalars are derived from the current augmented frames on the GPU.
 """
 from __future__ import annotations
 
@@ -57,11 +48,9 @@ def parse_clip(path: str) -> tuple[int, str | None]:
 def load_episode_map(path: str | None) -> dict[int, str]:
     """Optional `{clip_num: episode}` sidecar, for clips already renamed.
 
-    A previous renaming step rewrote `train_00007_A Creepy Tangle... s03e02.mp4` to
-    `train_00007.mp4`, discarding the only record of which episode a clip came
-    from. Without it, train/val/test can share an episode and every score is
-    optimistic -- the model gets credit for recognising a background it already
-    saw. This lets that mapping be supplied out of band.
+    Simplified clip names such as `train_00007.mp4` may omit the episode name.
+    Without an external mapping, train/val/test can share an episode and produce
+    optimistic scores. This sidecar preserves episode-level grouping.
 
     Accepts either `{"7": "...s03e02"}` or `[{"num": 7, "episode": "..."}]`.
     """

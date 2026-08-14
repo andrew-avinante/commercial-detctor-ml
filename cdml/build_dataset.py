@@ -11,32 +11,12 @@
                                  --out data/chapters --workers 4
 
     # 3. glue the shards into a cache train.py can read
-    python -m cdml.build_dataset --out data/chapters --assemble --cache cache_v2
+    python -m cdml.build_dataset --out data/chapters --assemble --cache cache
 
-This exists because the old corpus had a measured defect that no amount of
-model tuning could fix. The previous clip miner mined every clip from an ffmpeg
-`blackdetect d=1` hit, so 289 of 296 clips contained a fade to black and both
-classes looked alike: across eight hand-built features -- black depth, black
-duration, silence depth, silence duration, fade slope -- a logistic regression
-separated real breaks from other fades at AUC 0.518, a coin flip. The dataset
-was all hard negatives and no easy ones, while at inference over 99% of
-windows are ordinary footage the model had never seen.
-
-Four things are done differently here.
-
-* **Labels come from chapter markers**, so they are exact and free. Every
-  boundary was verified to sit on a genuine fade.
-* **Three classes of window, not two.** Break fades are positives; fades that
-  are *not* at a chapter mark are hard negatives; and ordinary footage far
-  from any fade is sampled as easy negatives. That last group is the one the
-  old corpus lacked entirely, and it is what inference is mostly made of.
-* **The fade is placed at a random offset in the window.** In the old data the
-  black sat at 0.49 +/- 0.05 of the clip in both classes, because
-  `generate_random_clip` centred it -- an artefact that cannot survive
-  contact with a sliding window at scan time.
-* **Black duration is left alone.** `blackdetect d=1` clamped every negative to
-  at least a second of black, destroying the one feature that genuinely
-  differs between an act break and a scene transition.
+Labels come from chapter markers that align with commercial-break fades. The
+builder creates three kinds of windows: chapter-marked breaks, non-break fades,
+and ordinary footage. Fade windows are placed at random offsets so training
+matches sliding-window inference, while their natural durations are preserved.
 """
 from __future__ import annotations
 
@@ -163,8 +143,6 @@ def build_episode(path: Path, show: str, args, rng) -> dict | None:
         F.append(f); A.append(a); Y.append(y); kinds.append("hard_negative")
 
     # -- easy negatives: ordinary footage, nowhere near a fade ---------------
-    # The old corpus had none of these at all, yet they are what a full-episode
-    # scan is almost entirely made of.
     blocked = np.zeros(n, bool)
     for s, e, _cs, _ce in lab["hard_negative_fades"]:
         blocked[max(0, s - T):min(n, e + T)] = True
@@ -330,7 +308,7 @@ def main() -> None:
     ap.add_argument("--out", default="data/chapters", help="shard directory")
     ap.add_argument("--assemble", action="store_true",
                     help="concatenate shards into --cache instead of building")
-    ap.add_argument("--cache", default="cache_v2")
+    ap.add_argument("--cache", default="cache")
     ap.add_argument("--max-label-frac", type=float, default=0.95,
                     help="assemble: drop windows labelled positive for at least "
                          "this fraction of their length (all-black, no context)")

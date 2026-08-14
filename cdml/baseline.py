@@ -7,9 +7,8 @@ thresholds fitted on the training split only. If the network cannot clearly
 beat this, the extra 230k parameters are not buying anything and the honest
 answer is to ship the threshold rule.
 
-Worth running before any training run: the original clip miner used ffmpeg
-`blackdetect` to mine candidate clips, so the model's real job was the narrower
-one of separating commercial-break fades from ordinary in-episode black frames.
+Use this before training to establish the performance of a direct dark-and-quiet
+rule on the same splits as the network.
 """
 from __future__ import annotations
 

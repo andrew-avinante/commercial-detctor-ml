@@ -284,7 +284,7 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("inputs", nargs="+",
                     help="episode files and/or show directories (searched recursively)")
-    ap.add_argument("--model", default="models/fade_detector_v2.pt")
+    ap.add_argument("--model", default="models/fade_detector.pt")
 
     out = ap.add_argument_group("output")
     out.add_argument("--in-place", action="store_true",
