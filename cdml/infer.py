@@ -2,20 +2,10 @@
 
     python -m cdml.infer --model runs/baseline/best.pt --video episode.mp4
 
-Replaces `scan.py`, which had two serious problems:
+The episode is decoded once for both video and audio. Raw probabilities from
+overlapping windows are averaged per frame, then thresholded with hysteresis to
+produce stable detections.
 
-* It called `librosa.load(VIDEO_PATH, ...)` once per 4-second window. On a
-  22-minute episode that is ~330 separate decodes of the same file, and librosa
-  decodes from the start each time. Here the episode is decoded exactly once,
-  streaming, for both video and audio.
-* It merged overlapping windows with `if 1 in local_result[:overlap]` on
-  hard `argmax` labels -- an OR over binarised predictions, which only ever adds
-  detections and cannot recover from a confident false positive. Here the raw
-  probabilities are averaged across every window covering a frame, then
-  thresholded once with hysteresis.
-
-`scan.py` also had a dead line, `processed_audio[:len(processed_audio)]`, which
-was presumably meant to be `[:len(processed_frames)]`.
 """
 from __future__ import annotations
 

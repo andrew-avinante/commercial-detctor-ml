@@ -12,7 +12,7 @@ authors = [{ name = "Andrew Avinante", email = "andrewavinante@gmail.com" }]
 
 # Inference only. Decoding is done by shelling out to ffmpeg/ffprobe, which are
 # system binaries rather than wheels, so they cannot be declared here -- see
-# `cdml.features` for why that pipeline replaced OpenCV and librosa.
+# `cdml.features` for the decoding pipeline.
 dependencies = [
     "numpy>=1.24",
     "torch>=2.4",
@@ -31,8 +31,6 @@ train = [
 cdml-infer = "cdml.infer:main"
 cdml-mark-chapters = "cdml.mark_chapters:main"
 
-# Only the package is installable. The scripts at the repo root (crop.py,
-# graph.py, prune.py, ...) are one-off research tools that import nothing from
-# each other, and `legacy/` is the superseded pipeline kept for reference.
+# Only the supported package is installable.
 [tool.setuptools]
 packages = ["cdml"]

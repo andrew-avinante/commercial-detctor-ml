@@ -1,6 +1,6 @@
 """Contact sheets for eyeballing a built cache.
 
-    python -m cdml.review --cache cache_v2 --out review
+    python -m cdml.review --cache cache --out review
 
 Automatic labels are only worth having if you can check them, and a table of
 counts will not tell you that a fade was labelled two seconds late. This
@@ -80,7 +80,7 @@ def sheet(frames, audio, labels, cols: int, tile: int,
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--cache", default="cache_v2")
+    ap.add_argument("--cache", default="cache")
     ap.add_argument("--out", default="review")
     ap.add_argument("--per-kind", type=int, default=12, help="clips per sheet")
     ap.add_argument("--cols", type=int, default=24, help="frames sampled per clip")

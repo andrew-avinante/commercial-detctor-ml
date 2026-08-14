@@ -191,13 +191,9 @@ poetry.toml
 
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 
-*vids/
-*dir/
-
 # cdml artifacts. The caches are multi-GB arrays and the run directories are
 # regenerable; `results/` and `models/` hold the small, useful parts of both.
-cache/
-cache_v2/
+cache*/
 data/
 runs/
 *.npy
@@ -207,7 +203,3 @@ runs/
 
 # ...except the shipped detector, which is under 1 MB and worth versioning
 !models/*.pt
-
-# working copies of the clip corpus (multi-GB)
-commercial_detector/
-commercial_selector/
