@@ -196,6 +196,8 @@ poetry.toml
 cache*/
 data/
 runs/
+results/cache*_meta.json
+results/chapter_survey.json
 *.npy
 *.npz
 *.pt
