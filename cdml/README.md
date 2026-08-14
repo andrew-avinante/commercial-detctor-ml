@@ -30,8 +30,8 @@ stable fade segments.
 without re-encoding media streams.
 
 ```bash
-python -m cdml.mark_chapters "/media/Shows/Example Show" --dry-run
-python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
+python -m cdml.mark_chapters "/media/Authorized/Example Show" --dry-run
+python -m cdml.mark_chapters "/media/Authorized/Example Show" --in-place
 ```
 
 Files that already contain chapters are skipped by default. Use

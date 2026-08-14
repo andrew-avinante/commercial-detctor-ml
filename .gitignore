@@ -197,6 +197,7 @@ cache*/
 data/
 runs/
 review/
+graphify-out/
 results/cache*_meta.json
 results/chapter_survey.json
 *.npy
