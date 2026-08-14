@@ -81,7 +81,7 @@ def hysteresis(scores: np.ndarray, high: float, low: float,
                min_frames: int = 0, smooth: int = 5) -> np.ndarray:
     """Two-threshold smoothing: seed a run above `high`, extend it down to `low`.
 
-    A single per-frame `argmax` -- what `run.py` and `scan.py` do today --
+    A single per-frame `argmax` -- as used by the previous inference path --
     fragments one fade into several flickering events. Smoothing, then
     hysteresis, then a minimum duration turns the score trace into stable
     segments. The smoothing pass matters because without it a single low-scoring

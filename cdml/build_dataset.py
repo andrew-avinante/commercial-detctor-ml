@@ -14,7 +14,7 @@
     python -m cdml.build_dataset --out data/chapters --assemble --cache cache_v2
 
 This exists because the old corpus had a measured defect that no amount of
-model tuning could fix. `get_black.py` mined every clip from an ffmpeg
+model tuning could fix. The previous clip miner mined every clip from an ffmpeg
 `blackdetect d=1` hit, so 289 of 296 clips contained a fade to black and both
 classes looked alike: across eight hand-built features -- black depth, black
 duration, silence depth, silence duration, fade slope -- a logistic regression

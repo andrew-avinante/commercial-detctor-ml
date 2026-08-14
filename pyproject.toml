@@ -31,8 +31,6 @@ train = [
 cdml-infer = "cdml.infer:main"
 cdml-mark-chapters = "cdml.mark_chapters:main"
 
-# Only the package is installable. The scripts at the repo root (crop.py,
-# graph.py, prune.py, ...) are one-off research tools that import nothing from
-# each other, and `legacy/` is the superseded pipeline kept for reference.
+# Only the supported package is installable.
 [tool.setuptools]
 packages = ["cdml"]

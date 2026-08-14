@@ -1,7 +1,7 @@
 """Build the training cache.
 
-    python -m cdml.preprocess --vids commercial_detector/training_vids \
-                              --labels label_json --out cache
+    python -m cdml.preprocess --vids /path/to/clips \
+                              --labels /path/to/labels --out cache
 
 Writes four files into --out:
 
@@ -57,7 +57,7 @@ def parse_clip(path: str) -> tuple[int, str | None]:
 def load_episode_map(path: str | None) -> dict[int, str]:
     """Optional `{clip_num: episode}` sidecar, for clips already renamed.
 
-    `rename.py` rewrites `train_00007_A Creepy Tangle... s03e02.mp4` to
+    A previous renaming step rewrote `train_00007_A Creepy Tangle... s03e02.mp4` to
     `train_00007.mp4`, discarding the only record of which episode a clip came
     from. Without it, train/val/test can share an episode and every score is
     optimistic -- the model gets credit for recognising a background it already

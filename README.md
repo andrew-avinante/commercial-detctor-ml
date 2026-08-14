@@ -62,7 +62,6 @@ Without `--in-place` the output is a sibling `<name>.chapters<ext>`;
 | `models/fade_detector_v2.pt` | the shipped detector, 225k parameters, 892 KB |
 | `results/` | run reports, split, training history, chapter survey |
 | `review/` | contact sheets for eyeballing labels |
-| `legacy/` | the superseded Keras pipeline — see [`legacy/README.md`](legacy/README.md) |
 
 ## Results
 
