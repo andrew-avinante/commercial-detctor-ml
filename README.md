@@ -112,7 +112,7 @@ The cache contains decoded frames, audio features, and labels derived from the
 source media. Do not publish it, raw shards, source clips, or their metadata
 unless you have explicit rights to redistribute them.
 
-### Inspect the generated illustrations
+### Inspect generated contact sheets locally
 
 `cdml.review` produces `positive.png`, `hard_negative.png`, and
 `easy_negative.png` in the chosen output directory. Each row shows sampled
@@ -121,17 +121,8 @@ lower bar is loudness. A good positive shows the image go dark as the loudness
 collapses beneath the labelled span; a hard negative looks similar but has no
 break label.
 
-#### Positive: labelled commercial-break fade
-
-![Positive commercial-break windows: the picture fades dark, the loudness bar drops, and the label bar is white across the fade.](review/positive.png)
-
-#### Hard negative: a fade that is not a commercial break
-
-![Hard-negative windows: a dark transition can look like a break visually, but the label bar remains unmarked.](review/hard_negative.png)
-
-#### Easy negative: ordinary footage
-
-![Easy-negative windows: ordinary footage has neither a labelled fade nor the characteristic audio collapse.](review/easy_negative.png)
+The contact sheets contain sampled source frames and are intentionally generated
+only for local review. They are not part of this repository or release.
 
 ## Results
 
@@ -149,10 +140,10 @@ show it did not see during training:
 
 | held-out show | test AP | event F1 | recall |
 |---|---:|---:|---:|
-| [Show A](results/loso_ShowA_report.json) | 0.9709 | 0.9545 | 1.000 |
-| [Show B](results/loso_ShowB_report.json) | 0.9634 | 0.9067 | 0.872 |
-| [Show C (live action)](results/loso_ShowC_report.json) | 0.9449 | 0.9061 | 0.967 |
-| [Show D](results/loso_ShowD_report.json) | 0.9313 | 0.7606 | 0.643 |
+| [Show A (animated)](results/loso_show_a_report.json) | 0.9709 | 0.9545 | 1.000 |
+| [Show B (animated)](results/loso_show_b_report.json) | 0.9634 | 0.9067 | 0.872 |
+| [Show C (live action)](results/loso_show_c_report.json) | 0.9449 | 0.9061 | 0.967 |
+| [Show D (animated)](results/loso_show_d_report.json) | 0.9313 | 0.7606 | 0.643 |
 
 The detailed [held-out evaluation](results/evaluation_report.json) and
 [training history](results/training_history.json) are also available as
@@ -166,14 +157,17 @@ held-out show whose break fades were much longer than those it had seen.
 |---|---|
 | [`cdml/`](cdml/) | Detection, dataset construction, training, and chapter-writing package. |
 | [`cdml/README.md`](cdml/README.md) | Package-level command and model reference. |
-| [`models/fade_detector.pt`](models/fade_detector.pt) | Shipped detector checkpoint (if its distribution is cleared). |
+| [`models/fade_detector.pt`](models/fade_detector.pt) | Shipped Apache-2.0 detector checkpoint. |
+| [`models/README.md`](models/README.md) | Checkpoint model card, license, limitations, and checksum. |
 | [`results/`](results/) | Aggregate evaluation reports, split information, and training history. |
-| `review/` | Locally generated label contact sheets; do not publish without media rights. |
+| `review/` | Ignored locally generated contact sheets; never publish them without media rights. |
 
 ## Release and reproducibility
 
 This project can be reproduced with a corpus you are authorised to use, but the
 original training examples are not a public dataset release. When releasing the
-project, publish code, documentation, model configuration, and sanitized
-aggregate metrics; keep original media, derived caches, raw clips, source-path
-metadata, and uncleared contact sheets out of the public repository.
+project, publish Apache-2.0 code and checkpoint, documentation, model
+configuration, and sanitized aggregate metrics; keep original media, derived
+caches, raw clips, source-path metadata, and contact sheets out of the public
+repository. The Apache-2.0 license applies to the code and checkpoint, not to
+the underlying training media.

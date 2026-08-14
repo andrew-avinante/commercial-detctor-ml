@@ -1,13 +1,13 @@
 """Cut a training cache straight from chapter-marked episodes.
 
     # 1. look before you leap -- seconds, no decoding
-    python -m cdml.chapters --shows "/media/Authorized/Example Show" ...
+    python -m cdml.chapters --shows "/media/Authorized/Show A" ...
 
     # 2. cut clips (hours; resumable, safe to ctrl-C and rerun)
-    python -m cdml.build_dataset --shows "/media/Authorized/Example Show" \
-                                 "REDACTED_LOCAL_PATH Show B" \
-                                 "REDACTED_LOCAL_PATH Show C" \
-                                 "REDACTED_LOCAL_PATH Show D" \
+    python -m cdml.build_dataset --shows "/media/Authorized/Show A" \
+                                 "/media/Authorized/Show B" \
+                                 "/media/Authorized/Show C" \
+                                 "/media/Authorized/Show D" \
                                  --out data/chapters --workers 4
 
     # 3. glue the shards into a cache train.py can read

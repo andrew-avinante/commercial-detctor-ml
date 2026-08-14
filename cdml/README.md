@@ -46,10 +46,10 @@ easy-negative ordinary footage.
 
 ```bash
 # Survey chapters without decoding video.
-python -m cdml.chapters --shows "/media/Raw/Show A"
+python -m cdml.chapters --shows "/media/Authorized/Example Show"
 
 # Create resumable episode shards.
-python -m cdml.build_dataset --shows "/media/Raw/Show A" \
+python -m cdml.build_dataset --shows "/media/Authorized/Example Show" \
     --out data/chapters --workers 5
 
 # Assemble shards into a training cache.

@@ -1,6 +1,6 @@
 """Detect the act breaks in a full episode and write them back as chapters.
 
-    python -m cdml.mark_chapters "/media/Shows/Show A" --in-place
+    python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
 
 This is `cdml.infer` plus a remux: the detector produces fade events, the fades
 become chapter boundaries, and ffmpeg stream-copies the file with an
