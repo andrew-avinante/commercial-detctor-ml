@@ -1,112 +1,179 @@
 # commercial-detector-ml
 
-Finds commercial breaks in an episode by detecting the fade to black paired
-with the audio fading out.
+`commercial-detector-ml` (CDML) finds commercial-break boundaries in episodic
+video. It looks for the paired **fade to black** and **fade to silence** that
+often surrounds an act break, then reports each detected fade or writes its
+midpoint back into the video as a chapter marker.
+
+It includes the complete workflow: local dataset construction, model training,
+episode inference, evaluation, and chapter writing. The code and aggregate
+results can be shared openly; video, audio, training caches, and visual contact
+sheets must only be shared when their source material is cleared for
+redistribution.
+
+## Quick start
+
+Install the Python dependencies and make sure `ffmpeg` and `ffprobe` are on
+your `PATH`.
 
 ```bash
-pip install -r requirements.txt        # numpy + torch; needs ffmpeg on PATH
-# CUDA 12.x:
-#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+pip install -r requirements.txt
+# CUDA 12.x example:
+# pip install torch --index-url https://download.pytorch.org/whl/cu124
 
 python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
 ```
 
-```
+Example output:
+
+```text
 episode.mkv  00:23:46.186  34228 frames  ->  3 fade(s)
   00:01:01.500 -> 00:01:05.125  (3.62s, p=0.989)
   00:11:45.125 -> 00:11:50.542  (5.42s, p=0.991)
   00:22:44.542 -> 00:22:49.750  (5.21s, p=0.990)
 ```
 
-All three land on the episode's real chapter marks (63.4s, 708.3s, 1367.4s).
-That episode was held out of training.
+## How it works
 
-## Writing the breaks back as chapters
+For each eight-second window, CDML decodes 64×64 grayscale video frames and
+audio features. A shared CNN reads the frames, luminance statistics capture how
+dark and still they are, and log-RMS plus mel-band energies describe the audio.
+A bidirectional GRU combines those signals and emits one fade probability per
+frame. Overlapping-window scores are combined, smoothed, and converted into
+stable fade events using hysteresis and a minimum-duration rule.
 
-`cdml.mark_chapters` runs the same detector over a whole episode — or a whole
-show directory — and remuxes the file with chapter markers on the breaks. The
-streams are copied, never re-encoded.
+```mermaid
+flowchart LR
+    V[Episode video] --> D[Decode video and audio]
+    D --> F[64×64 grayscale frames]
+    D --> A[Audio energy features]
+    F --> C[Shared CNN + luminance statistics]
+    C --> G[Bidirectional GRU]
+    A --> G
+    G --> P[Per-frame fade probabilities]
+    P --> E[Smoothed commercial-break events]
+    E --> M[Optional chapter markers]
+```
+
+This is designed to find the transition signal, rather than recognise a
+particular show, commercial, or visual style. It will be less reliable when
+breaks lack the black-and-silent transition, are unusually long, occur near end
+credits, or use audio/video formats unlike the training media.
+
+## Add chapter markers
+
+`cdml.mark_chapters` runs the detector across an episode or show directory and
+remuxes chapter markers without re-encoding streams.
 
 ```bash
 python -m cdml.mark_chapters "/media/Shows/Example Show" --dry-run
 python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
 ```
 
-The boundary goes in the *middle* of the fade, which is where a DVD mark sits
-(`--anchor start|end` to move it). Fades in the last 20 s are ignored — that
-one runs into the end credits and is not a break. A file that already has
-chapters is skipped, since in this corpus those chapters are the ground truth;
-`--existing replace` overrides it and `--existing compare` scores the detector
-against them instead of writing:
+By default, files that already contain chapters are skipped. Use `--existing
+compare` to compare predictions against them, or `--existing replace` only when
+you intend to replace the existing markers. Without `--in-place`, output is
+written alongside the source as `<name>.chapters<ext>`.
 
+## Create your own training data
+
+Train only on media you are authorised to process. DVD and Blu-ray chapter
+markers can provide useful labels for internal act breaks: CDML surveys the
+markers, snaps them to the matching fades, then builds a local cache containing
+three window types:
+
+- **Positive windows:** chapter-marked commercial-break fades.
+- **Hard negatives:** fades that are not chapter-marked breaks, such as scene
+  transitions.
+- **Easy negatives:** ordinary footage away from a fade.
+
+Random window placement prevents the model from learning that a fade is always
+in the centre of a clip. Grouped train/validation/test splits keep all clips
+from an episode in the same split, avoiding episode-level leakage.
+
+```bash
+# 1. Inspect chapter coverage before spending time decoding media.
+python -m cdml.chapters --shows "/media/Authorized/Example Show"
+
+# 2. Build resumable per-episode shards.
+python -m cdml.build_dataset --shows "/media/Authorized/Example Show" \
+    --out data/chapters --workers 5
+
+# 3. Assemble the local training cache.
+python -m cdml.build_dataset --out data/chapters --assemble --cache cache
+
+# 4. Inspect labels, establish a no-model baseline, and train.
+python -m cdml.review --cache cache --out review
+python -m cdml.baseline --cache cache
+python -m cdml.train --cache cache --out runs/detector
 ```
-  s1e11.mkv  00:23:31.520  ->  3 fade(s), 4 chapter(s)
-    existing marks : 248.5  806.5  1379.0
-    detected       : 61.4  806.2  1378.7
-    00:13:26.167  matches mark 00:13:26.489  delta -0.32s
-    00:22:58.729  matches mark 00:22:58.978  delta -0.25s
-    00:01:01.396  FALSE POSITIVE (nearest mark 00:04:08.515, -187.1s)
-    00:04:08.515  MISSED mark
-    2/3 marks found, 1 extra detection(s)
-```
 
-Without `--in-place` the output is a sibling `<name>.chapters<ext>`;
-`--in-place` swaps the source atomically, and only after ffmpeg exits clean
-*and* the chapters read back out of the new file.
+The cache contains decoded frames, audio features, and labels derived from the
+source media. Do not publish it, raw shards, source clips, or their metadata
+unless you have explicit rights to redistribute them.
 
-## Layout
+### Inspect the generated illustrations
 
-| path | |
-|---|---|
-| `cdml/` | detection and training package — see [`cdml/README.md`](cdml/README.md) |
-| `models/fade_detector.pt` | the shipped detector, 225k parameters, 892 KB |
-| `results/` | run reports, split, training history, chapter survey |
-| `review/` | contact sheets for eyeballing labels |
+`cdml.review` produces `positive.png`, `hard_negative.png`, and
+`easy_negative.png` in the chosen output directory. Each row shows sampled
+frames from one window; the upper bar is the label (white means break) and the
+lower bar is loudness. A good positive shows the image go dark as the loudness
+collapses beneath the labelled span; a hard negative looks similar but has no
+break label.
+
+#### Positive: labelled commercial-break fade
+
+![Positive commercial-break windows: the picture fades dark, the loudness bar drops, and the label bar is white across the fade.](review/positive.png)
+
+#### Hard negative: a fade that is not a commercial break
+
+![Hard-negative windows: a dark transition can look like a break visually, but the label bar remains unmarked.](review/hard_negative.png)
+
+#### Easy negative: ordinary footage
+
+![Easy-negative windows: ordinary footage has neither a labelled fade nor the characteristic audio collapse.](review/easy_negative.png)
 
 ## Results
 
-Trained on 2,032 windows from 83 episodes across 4 shows, labelled
-automatically from container chapter markers. Split is grouped by episode, so
-no episode spans train and test.
+The published aggregate reports are in [`results/`](results/). The main held-out
+evaluation used 2,032 windows from 83 episodes across four shows. Splits were
+grouped by episode, so no episode appears in more than one split.
 
-| | test AP | frame F1 | event F1 | missed |
-|---|---|---|---|---|
+| model | test AP | frame F1 | event F1 | missed events |
+|---|---:|---:|---:|---:|
 | threshold baseline | 0.7792 | 0.7255 | 0.7782 | 9 of 123 |
 | **CDML detector** | **0.9823** | **0.9654** | **0.9840** | **0 of 123** |
 
-Generalisation to a show that was never trained on, leave-one-show-out:
+Leave-one-show-out evaluation measures how well the detector transfers to a
+show it did not see during training:
 
-| held out | test AP | event F1 | recall |
-|---|---|---|---|
-| Show A | 0.9709 | 0.9545 | 1.000 |
-| Show B | 0.9634 | 0.9067 | 0.872 |
-| Show C *(live action)* | 0.9449 | 0.9061 | 0.967 |
-| Show D | 0.9313 | 0.7606 | 0.643 |
+| held-out show | test AP | event F1 | recall |
+|---|---:|---:|---:|
+| [Show A](results/loso_ShowA_report.json) | 0.9709 | 0.9545 | 1.000 |
+| [Show B](results/loso_ShowB_report.json) | 0.9634 | 0.9067 | 0.872 |
+| [Show C (live action)](results/loso_ShowC_report.json) | 0.9449 | 0.9061 | 0.967 |
+| [Show D](results/loso_ShowD_report.json) | 0.9313 | 0.7606 | 0.643 |
 
-Show C is the informative row: trained on nothing but cartoons and tested
-on a live-action sitcom, it still recovers 96.7% of breaks. The model learned
-"sustained black plus sustained silence", not "cartoon".
+The detailed [held-out evaluation](results/evaluation_report.json) and
+[training history](results/training_history.json) are also available as
+machine-readable artifacts. The live-action result indicates that the model can
+transfer beyond the cartoons used for training; its known weakness was the
+held-out show whose break fades were much longer than those it had seen.
 
-Show D is the known weak spot, and it is not a threshold problem —
-re-tuning the threshold on that show recovers nothing. Its breaks are the
-longest in the corpus (68 frames of silence against 33-38 everywhere else), so
-a model that never saw one may not recognise it. It scores normally when the
-show is in training.
+## Repository layout
 
-## Building a corpus
+| Path | Purpose |
+|---|---|
+| [`cdml/`](cdml/) | Detection, dataset construction, training, and chapter-writing package. |
+| [`cdml/README.md`](cdml/README.md) | Package-level command and model reference. |
+| [`models/fade_detector.pt`](models/fade_detector.pt) | Shipped detector checkpoint (if its distribution is cleared). |
+| [`results/`](results/) | Aggregate evaluation reports, split information, and training history. |
+| `review/` | Locally generated label contact sheets; do not publish without media rights. |
 
-Chapter markers in a DVD/BD rip sit on the act breaks, so they are exact
-labels for free. Verified across four shows: every internal boundary lands on
-a real fade.
+## Release and reproducibility
 
-```bash
-python -m cdml.chapters --shows "/media/Raw/Show A"   # survey, seconds
-python -m cdml.build_dataset --shows "/media/Raw/..." --out data/chapters --workers 5
-python -m cdml.build_dataset --out data/chapters --assemble --cache cache
-python -m cdml.review  --cache cache --out review       # check the labels
-python -m cdml.baseline --cache cache                   # no-model reference
-python -m cdml.train   --cache cache --out runs/detector
-```
-
-`cdml.baseline` keeps the model honest: if it does not clearly beat a tuned
-threshold rule, the parameters are not earning their place.
+This project can be reproduced with a corpus you are authorised to use, but the
+original training examples are not a public dataset release. When releasing the
+project, publish code, documentation, model configuration, and sanitized
+aggregate metrics; keep original media, derived caches, raw clips, source-path
+metadata, and uncleared contact sheets out of the public repository.
