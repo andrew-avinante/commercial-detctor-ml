@@ -1,0 +1,362 @@
+{
+  "communities": {
+    "0": [
+      "cdml_baseline",
+      "cdml_baseline_baseline_scores",
+      "cdml_baseline_main",
+      "cdml_baseline_py_ndarray",
+      "cdml_baseline_rationale_1",
+      "cdml_baseline_rationale_28",
+      "cdml_config",
+      "cdml_config_rationale_1",
+      "cdml_config_trainconfig",
+      "cdml_dataset",
+      "cdml_dataset_augment",
+      "cdml_dataset_batchsampler",
+      "cdml_dataset_batchsampler_init",
+      "cdml_dataset_batchsampler_iter",
+      "cdml_dataset_batchsampler_len",
+      "cdml_dataset_cache",
+      "cdml_dataset_cache_bytes_on_device",
+      "cdml_dataset_cache_groups",
+      "cdml_dataset_cache_init",
+      "cdml_dataset_fetch",
+      "cdml_dataset_grouped_split",
+      "cdml_dataset_pos_weight_for",
+      "cdml_dataset_py_device",
+      "cdml_dataset_py_ndarray",
+      "cdml_dataset_py_tensor",
+      "cdml_dataset_rationale_1",
+      "cdml_dataset_rationale_116",
+      "cdml_dataset_rationale_127",
+      "cdml_dataset_rationale_21",
+      "cdml_dataset_rationale_44",
+      "cdml_dataset_rationale_50",
+      "cdml_dataset_rationale_85",
+      "cdml_dataset_rationale_94",
+      "cdml_model_count_parameters",
+      "cdml_model_rationale_17",
+      "cdml_model_video_scalars",
+      "cdml_train",
+      "cdml_train_lr_lambda",
+      "cdml_train_main",
+      "cdml_train_predict",
+      "cdml_train_py_no_grad",
+      "cdml_train_rationale_1",
+      "cdml_train_set_seed",
+      "module"
+    ],
+    "1": [
+      "cdml_build_dataset",
+      "cdml_build_dataset_build_episode",
+      "cdml_build_dataset_cut",
+      "cdml_build_dataset_decode_episode",
+      "cdml_build_dataset_log",
+      "cdml_build_dataset_main",
+      "cdml_build_dataset_place",
+      "cdml_build_dataset_py_path",
+      "cdml_build_dataset_rationale_1",
+      "cdml_build_dataset_rationale_48",
+      "cdml_build_dataset_rationale_84",
+      "cdml_build_dataset_rationale_98",
+      "cdml_build_dataset_run_assemble",
+      "cdml_build_dataset_run_build",
+      "cdml_build_dataset_shard_name",
+      "cdml_chapters",
+      "cdml_chapters_black_events",
+      "cdml_chapters_episode_id",
+      "cdml_chapters_find_videos",
+      "cdml_chapters_label_episode",
+      "cdml_chapters_main",
+      "cdml_chapters_probe",
+      "cdml_chapters_py_ndarray",
+      "cdml_chapters_py_path",
+      "cdml_chapters_rationale_1",
+      "cdml_chapters_rationale_116",
+      "cdml_chapters_rationale_129",
+      "cdml_chapters_rationale_48",
+      "cdml_chapters_rationale_54",
+      "cdml_chapters_rationale_69",
+      "cdml_chapters_rationale_81",
+      "cdml_chapters_snap_to_fade",
+      "cdml_chapters_usable_marks"
+    ],
+    "2": [
+      "cdml_features",
+      "cdml_features_audio_features",
+      "cdml_features_clip_features",
+      "cdml_features_decode_audio",
+      "cdml_features_decode_gray",
+      "cdml_features_decodeerror",
+      "cdml_features_frame",
+      "cdml_features_hz_to_mel",
+      "cdml_features_mel_filterbank",
+      "cdml_features_mel_to_hz",
+      "cdml_features_py_ndarray",
+      "cdml_features_rationale_1",
+      "cdml_features_rationale_113",
+      "cdml_features_rationale_124",
+      "cdml_features_rationale_148",
+      "cdml_features_rationale_47",
+      "cdml_features_rationale_68",
+      "cdml_features_rationale_95",
+      "cdml_features_run",
+      "cdml_preprocess",
+      "cdml_preprocess_build_label_vector",
+      "cdml_preprocess_load_episode_map",
+      "cdml_preprocess_load_labels",
+      "cdml_preprocess_main",
+      "cdml_preprocess_parse_clip",
+      "cdml_preprocess_py_ndarray",
+      "cdml_preprocess_rationale_1",
+      "cdml_preprocess_rationale_49",
+      "cdml_preprocess_rationale_83",
+      "cdml_preprocess_timestamp_to_frame"
+    ],
+    "3": [
+      "cdml_features_probe_duration",
+      "cdml_infer",
+      "cdml_infer_load_model",
+      "cdml_infer_main",
+      "cdml_infer_py_device",
+      "cdml_infer_py_ndarray",
+      "cdml_infer_py_no_grad",
+      "cdml_infer_rationale_1",
+      "cdml_infer_rationale_27",
+      "cdml_infer_rationale_63",
+      "cdml_infer_scan",
+      "cdml_infer_stream_gray",
+      "cdml_infer_to_events",
+      "cdml_model",
+      "cdml_model_audioencoder",
+      "cdml_model_audioencoder_forward",
+      "cdml_model_audioencoder_init",
+      "cdml_model_build_model",
+      "cdml_model_fadedetector",
+      "cdml_model_fadedetector_forward",
+      "cdml_model_fadedetector_init",
+      "cdml_model_frameencoder",
+      "cdml_model_frameencoder_forward",
+      "cdml_model_frameencoder_init",
+      "cdml_model_py_tensor",
+      "cdml_model_rationale_1",
+      "cdml_model_rationale_125",
+      "cdml_model_rationale_40",
+      "cdml_model_rationale_68"
+    ],
+    "4": [
+      "cdml_infer_fmt",
+      "cdml_mark_chapters",
+      "cdml_mark_chapters_anchor_time",
+      "cdml_mark_chapters_boundaries",
+      "cdml_mark_chapters_build_chapters",
+      "cdml_mark_chapters_collect",
+      "cdml_mark_chapters_compare_to_existing",
+      "cdml_mark_chapters_escape",
+      "cdml_mark_chapters_ffmetadata",
+      "cdml_mark_chapters_main",
+      "cdml_mark_chapters_probe_existing",
+      "cdml_mark_chapters_process",
+      "cdml_mark_chapters_py_path",
+      "cdml_mark_chapters_rationale_1",
+      "cdml_mark_chapters_rationale_115",
+      "cdml_mark_chapters_rationale_134",
+      "cdml_mark_chapters_rationale_165",
+      "cdml_mark_chapters_rationale_57",
+      "cdml_mark_chapters_rationale_85",
+      "cdml_mark_chapters_remux",
+      "cdml_mark_chapters_verify",
+      "runtimeerror"
+    ],
+    "5": [
+      "cdml_metrics",
+      "cdml_metrics_average_precision",
+      "cdml_metrics_best_f1",
+      "cdml_metrics_evaluate",
+      "cdml_metrics_event_scores",
+      "cdml_metrics_greedy_match",
+      "cdml_metrics_hysteresis",
+      "cdml_metrics_moving_average",
+      "cdml_metrics_py_ndarray",
+      "cdml_metrics_rationale_1",
+      "cdml_metrics_rationale_103",
+      "cdml_metrics_rationale_146",
+      "cdml_metrics_rationale_18",
+      "cdml_metrics_rationale_37",
+      "cdml_metrics_rationale_60",
+      "cdml_metrics_rationale_70",
+      "cdml_metrics_rationale_82",
+      "cdml_metrics_to_segments"
+    ],
+    "6": [
+      "cdml_review",
+      "cdml_review_main",
+      "cdml_review_py_ndarray",
+      "cdml_review_py_path",
+      "cdml_review_rationale_1",
+      "cdml_review_rationale_32",
+      "cdml_review_rationale_49",
+      "cdml_review_sheet",
+      "cdml_review_write_png"
+    ],
+    "7": [
+      "cdml_init",
+      "cdml_init_rationale_1"
+    ],
+    "8": [
+      "pkg_cdml"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08350951374207188,
+    "1": 0.11742424242424243,
+    "2": 0.11954022988505747,
+    "3": 0.10837438423645321,
+    "4": 0.18614718614718614,
+    "5": 0.20261437908496732,
+    "6": 0.3333333333333333,
+    "7": 1.0,
+    "8": 1.0
+  },
+  "gods": [
+    {
+      "id": "cdml_mark_chapters_process",
+      "label": "process()",
+      "degree": 15
+    },
+    {
+      "id": "cdml_train_main",
+      "label": "main()",
+      "degree": 14
+    },
+    {
+      "id": "cdml_dataset_cache",
+      "label": "Cache",
+      "degree": 11
+    },
+    {
+      "id": "cdml_metrics_evaluate",
+      "label": "evaluate()",
+      "degree": 11
+    },
+    {
+      "id": "cdml_infer_scan",
+      "label": "scan()",
+      "degree": 10
+    },
+    {
+      "id": "cdml_features_audio_features",
+      "label": "audio_features()",
+      "degree": 9
+    },
+    {
+      "id": "cdml_build_dataset_build_episode",
+      "label": "build_episode()",
+      "degree": 8
+    },
+    {
+      "id": "cdml_chapters_label_episode",
+      "label": "label_episode()",
+      "degree": 8
+    },
+    {
+      "id": "cdml_config_trainconfig",
+      "label": "TrainConfig",
+      "degree": 8
+    },
+    {
+      "id": "cdml_dataset_batchsampler",
+      "label": "BatchSampler",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "main()",
+      "target": "evaluate()",
+      "source_files": [
+        "cdml/baseline.py",
+        "cdml/metrics.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "decode_episode()",
+      "target": "DecodeError",
+      "source_files": [
+        "cdml/build_dataset.py",
+        "cdml/features.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "cut()",
+      "target": "audio_features()",
+      "source_files": [
+        "cdml/build_dataset.py",
+        "cdml/features.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "collect()",
+      "target": "find_videos()",
+      "source_files": [
+        "cdml/mark_chapters.py",
+        "cdml/chapters.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "load_model()",
+      "target": "TrainConfig",
+      "source_files": [
+        "cdml/infer.py",
+        "cdml/config.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `audio_features()` connect `features.py` to `build_dataset.py`, `infer.py`?",
+      "why": "High betweenness centrality (0.042) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `cdml` to the rest of the system?",
+      "why": "1 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `train.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.08350951374207188 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `build_dataset.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11742424242424243 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `features.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11954022988505747 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `infer.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10837438423645321 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
