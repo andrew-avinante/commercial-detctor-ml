@@ -7,7 +7,7 @@ full-episode inference, and chapter writing.
 ## Install
 
 ```bash
-pip install cdml
+pip install git+https://github.com/andrew-avinante/commercial-detctor-ml.git
 # CUDA 12.x on the 3060:
 #   pip install torch --index-url https://download.pytorch.org/whl/cu124
 ```

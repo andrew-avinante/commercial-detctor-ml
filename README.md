@@ -17,7 +17,7 @@ Install CDML and make sure `ffmpeg` and `ffprobe` are on your `PATH`. They are
 system prerequisites: a portable Python wheel cannot install them reliably.
 
 ```bash
-pip install cdml
+pip install git+https://github.com/andrew-avinante/commercial-detctor-ml.git
 # CUDA 12.x example:
 # pip install torch --index-url https://download.pytorch.org/whl/cu124
 
