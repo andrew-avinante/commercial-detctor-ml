@@ -1,6 +1,6 @@
 """Detect the act breaks in a full episode and write them back as chapters.
 
-    python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
+    cdml chapters mark "/media/Shows/Example Show" --in-place
 
 This is `cdml.infer` plus a remux: the detector produces fade events, the fades
 become chapter boundaries, and ffmpeg stream-copies the file with an
@@ -40,15 +40,21 @@ import subprocess
 import sys
 from pathlib import Path
 
-import torch
-
-from .chapters import VIDEO_EXT, find_videos
+from .chapter_planner import AutoRule, Endpoint, parse_endpoint, plan_boundaries
 from .config import CLIP_FRAMES, FPS
-from .features import probe_duration
-from .infer import fmt, load_model, scan, to_events
+from .model_store import resolve_model_path
 
 # Containers whose muxer can carry chapters. AVI and raw TS cannot.
 CHAPTER_EXT = {".mkv", ".mp4", ".m4v", ".mov", ".webm"}
+# Keep CLI startup independent from the NumPy-heavy dataset utilities.
+VIDEO_EXT = {".mkv", ".mp4", ".avi", ".m4v", ".ts"}
+
+
+def fmt(seconds: float) -> str:
+    """Format a timestamp without importing the optional inference stack."""
+    minutes, secs = divmod(seconds, 60)
+    hours, minutes = divmod(int(minutes), 60)
+    return f"{hours:02d}:{minutes:02d}:{secs:06.3f}"
 
 
 # --- probing -----------------------------------------------------------------
@@ -190,7 +196,10 @@ def compare_to_existing(existing: list[dict], splits: list[float],
           f"{len(splits) - hits} extra detection(s)")
 
 
-def process(path: Path, model, cfg, device, args) -> dict:
+def process(path: Path, model, cfg, device, args, fixed: list[Endpoint],
+            auto_rules: list[AutoRule]) -> dict:
+    from .features import probe_duration
+
     duration = probe_duration(str(path))
     existing, _ = probe_existing(path)
 
@@ -204,25 +213,35 @@ def process(path: Path, model, cfg, device, args) -> dict:
               f"(--existing replace|compare to override)")
         return {**row, "action": "skipped"}
 
-    scores = scan(str(path), model, cfg, device, hop=args.hop,
-                  batch_size=args.batch_size)
-    events = to_events(scores, cfg)
-    splits, dropped = boundaries(events, duration, args.anchor,
-                                 args.start_margin, args.end_margin,
-                                 args.min_gap)
+    # Fixed-only invocations do not need PyTorch, audio decoding, or a model.
+    # Validate the rules before an expensive scan so bad endpoints fail quickly.
+    events: list[dict] = []
+    plan = plan_boundaries(fixed=fixed, auto_rules=auto_rules, events=events,
+                           duration=duration, anchor=args.anchor,
+                           min_gap=args.min_gap, auto_cap=args.auto_cap)
+    if auto_rules:
+        # Keep fixed-only chapter marking usable without importing PyTorch.
+        from .infer import scan, to_events
+        scores = scan(str(path), model, cfg, device, hop=args.hop,
+                      batch_size=args.batch_size)
+        events = to_events(scores, cfg)
+        plan = plan_boundaries(fixed=fixed, auto_rules=auto_rules, events=events,
+                               duration=duration, anchor=args.anchor,
+                               min_gap=args.min_gap, auto_cap=args.auto_cap)
+    splits = [item["time"] for item in plan["accepted"]]
     chapters = build_chapters(splits, duration, args.title_format)
 
     print(f"  {path.name}  {fmt(duration)}  ->  {len(events)} fade(s), "
           f"{len(chapters)} chapter(s)")
     for c in chapters:
         print(f"    {fmt(c['start'])} -> {fmt(c['end'])}  {c['title']}")
-    for d in dropped:
-        print(f"    dropped {fmt(anchor_time(d, args.anchor))} "
-              f"(p={d['confidence']:.3f}): {d['reason']}")
+    for d in plan["rejected"]:
+        confidence = d.get("confidence")
+        score = f" (p={confidence:.3f})" if confidence is not None else ""
+        print(f"    dropped {fmt(d['time'])}{score}: {d['reason']}")
 
     row |= {"events": events, "splits": [round(s, 3) for s in splits],
-            "dropped": [{"start": d["start"], "end": d["end"],
-                         "reason": d["reason"]} for d in dropped],
+            "plan": plan, "dropped": plan["rejected"],
             "chapters": [{**c, "start": round(c["start"], 3),
                           "end": round(c["end"], 3)} for c in chapters]}
 
@@ -266,7 +285,9 @@ def collect(inputs: list[str]) -> list[Path]:
     for item in inputs:
         p = Path(item)
         if p.is_dir():
-            paths += find_videos(p)
+            paths += sorted(candidate for candidate in p.rglob("*")
+                            if candidate.suffix.lower() in VIDEO_EXT
+                            and not candidate.name.startswith("."))
         elif p.is_file():
             paths.append(p)
         else:
@@ -279,12 +300,37 @@ def collect(inputs: list[str]) -> list[Path]:
     return uniq
 
 
-def main() -> None:
+def _non_negative(text: str) -> float:
+    value = float(text)
+    if value < 0:
+        raise argparse.ArgumentTypeError("must be zero or greater")
+    return value
+
+
+def rules_from_args(args) -> tuple[list[Endpoint], list[AutoRule]]:
+    """Turn CLI strings into pure planner rules.
+
+    With no new rule options we retain the legacy detector-only operation:
+    scan the whole programme except its start/end margins.  Supplying one or
+    more fixed marks does not implicitly trigger model inference.
+    """
+    fixed = [parse_endpoint(text) for text in args.mark]
+    auto_rules = [AutoRule(parse_endpoint(start), parse_endpoint(end), index)
+                  for index, (start, end) in enumerate(args.auto)]
+    if not fixed and not auto_rules:
+        auto_rules.append(AutoRule(
+            Endpoint("start", args.start_margin, f"start:{args.start_margin:g}"),
+            Endpoint("end", args.end_margin, f"end:{args.end_margin:g}"), 0))
+    return fixed, auto_rules
+
+
+def main(argv=None) -> None:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("inputs", nargs="+",
                     help="episode files and/or show directories (searched recursively)")
-    ap.add_argument("--model", default="models/fade_detector.pt")
+    ap.add_argument("--model", default=None,
+                    help="checkpoint path; downloads the verified default when omitted")
 
     out = ap.add_argument_group("output")
     out.add_argument("--in-place", action="store_true",
@@ -302,14 +348,21 @@ def main() -> None:
                           "(default: skip)")
 
     ch = ap.add_argument_group("chapter geometry")
+    ch.add_argument("--mark", action="append", default=[], metavar="ENDPOINT",
+                    help="guaranteed start:<time> or end:<time> boundary (repeatable)")
+    ch.add_argument("--auto", action="append", nargs=2, default=[],
+                    metavar=("START_ENDPOINT", "END_ENDPOINT"),
+                    help="detect boundaries in this endpoint range (repeatable)")
     ch.add_argument("--anchor", choices=["mid", "start", "end"], default="mid",
                     help="where in the fade the boundary goes (default: mid)")
-    ch.add_argument("--start-margin", type=float, default=5.0,
-                    help="ignore fades this close to the start (default: 5s)")
-    ch.add_argument("--end-margin", type=float, default=20.0,
-                    help="ignore fades this close to the end (default: 20s)")
-    ch.add_argument("--min-gap", type=float, default=30.0,
+    ch.add_argument("--start-margin", type=_non_negative, default=5.0,
+                    help="legacy implicit-auto start margin (default: 5s)")
+    ch.add_argument("--end-margin", type=_non_negative, default=20.0,
+                    help="legacy implicit-auto end margin (default: 20s)")
+    ch.add_argument("--min-gap", type=_non_negative, default=30.0,
                     help="minimum spacing between two breaks (default: 30s)")
+    ch.add_argument("--auto-cap", type=int, default=0,
+                    help="maximum automatic boundaries per --auto range; 0 is unlimited")
     ch.add_argument("--title-format", default="Act {i}")
 
     det = ap.add_argument_group("detector")
@@ -319,7 +372,14 @@ def main() -> None:
     det.add_argument("--low", type=float, default=None)
     det.add_argument("--min-frames", type=int, default=None)
     det.add_argument("--device", default=None, help="cuda / cpu (default: auto)")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+
+    if args.auto_cap < 0:
+        ap.error("--auto-cap must be zero or greater")
+    try:
+        fixed, auto_rules = rules_from_args(args)
+    except ValueError as exc:
+        ap.error(str(exc))
 
     videos = collect(args.inputs)
     if not videos:
@@ -327,26 +387,37 @@ def main() -> None:
     if args.in_place and args.out_dir:
         raise SystemExit("--in-place and --out-dir are mutually exclusive")
 
-    device = torch.device(args.device or
-                          ("cuda" if torch.cuda.is_available() else "cpu"))
-    model, cfg, thr = load_model(args.model, device)
+    model = cfg = device = None
+    model_path = None
+    if auto_rules:
+        import torch
+        from .infer import load_model
 
-    # Same defaulting as cdml.infer: trigger on the threshold tuned on
-    # validation, not on 0.5.
-    cfg.hyst_high = args.high if args.high is not None else max(thr, cfg.hyst_low)
-    if args.low is not None:
-        cfg.hyst_low = args.low
-    if args.min_frames is not None:
-        cfg.min_event_frames = args.min_frames
+        try:
+            model_path = resolve_model_path(args.model)
+        except RuntimeError as exc:
+            ap.error(str(exc))
+        device = torch.device(args.device or
+                              ("cuda" if torch.cuda.is_available() else "cpu"))
+        model, cfg, thr = load_model(str(model_path), device)
 
-    print(f"{Path(args.model).name} on {device.type}  "
-          f"high={cfg.hyst_high:.3f} low={cfg.hyst_low:.3f}  "
-          f"{len(videos)} file(s)")
+        # Same defaulting as cdml.infer: trigger on the threshold tuned on
+        # validation, not on 0.5.
+        cfg.hyst_high = args.high if args.high is not None else max(thr, cfg.hyst_low)
+        if args.low is not None:
+            cfg.hyst_low = args.low
+        if args.min_frames is not None:
+            cfg.min_event_frames = args.min_frames
+        print(f"{model_path.name} on {device.type}  "
+              f"high={cfg.hyst_high:.3f} low={cfg.hyst_low:.3f}  "
+              f"{len(videos)} file(s)")
+    else:
+        print(f"fixed chapter rules only  {len(videos)} file(s)")
 
     rows, failed = [], 0
     for path in videos:
         try:
-            rows.append(process(path, model, cfg, device, args))
+            rows.append(process(path, model, cfg, device, args, fixed, auto_rules))
         except Exception as exc:                       # keep going through a batch
             failed += 1
             print(f"  {path.name}: FAILED -- {exc}", file=sys.stderr)
@@ -361,7 +432,8 @@ def main() -> None:
     if args.json:
         Path(args.json).parent.mkdir(parents=True, exist_ok=True)
         Path(args.json).write_text(json.dumps(
-            {"model": args.model, "fps": FPS, "anchor": args.anchor,
+            {"model": str(model_path) if model_path else None, "fps": FPS,
+             "anchor": args.anchor,
              "files": rows}, indent=2))
         print(f"wrote {args.json}")
     if failed:

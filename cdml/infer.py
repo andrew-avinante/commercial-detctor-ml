@@ -1,6 +1,6 @@
 """Scan a full episode for commercial-break fades.
 
-    python -m cdml.infer --model runs/baseline/best.pt --video episode.mp4
+    cdml infer --model runs/baseline/best.pt --video episode.mp4
 
 The episode is decoded once for both video and audio. Raw probabilities from
 overlapping windows are averaged per frame, then thresholded with hysteresis to
@@ -14,17 +14,14 @@ import json
 import subprocess
 from pathlib import Path
 
-import numpy as np
-import torch
-
-from .config import AUDIO_SR, CLIP_FRAMES, FPS, IMG_SIZE, TrainConfig
-from .features import audio_features, decode_audio, probe_duration
-from .metrics import hysteresis, to_segments
-from .model import build_model
+from .config import CLIP_FRAMES, FPS, IMG_SIZE
+from .model_store import resolve_model_path
 
 
 def stream_gray(path: str, size: int, fps: int, chunk: int = 512):
     """Yield (chunk, size, size) uint8 blocks from a single ffmpeg process."""
+    import numpy as np
+
     cmd = [
         "ffmpeg", "-v", "error", "-nostdin", "-i", path, "-map", "0:v:0",
         "-vf", f"fps={fps},scale={size}:{size}:flags=area,format=gray",
@@ -49,6 +46,11 @@ def stream_gray(path: str, size: int, fps: int, chunk: int = 512):
 
 
 def load_model(path: str, device: torch.device):
+    import torch
+
+    from .config import TrainConfig
+    from .model import build_model
+
     ckpt = torch.load(path, map_location=device, weights_only=False)
     cfg = TrainConfig(**ckpt["config"])
     model = build_model(cfg).to(device).eval()
@@ -56,7 +58,6 @@ def load_model(path: str, device: torch.device):
     return model, cfg, ckpt.get("threshold", 0.5)
 
 
-@torch.no_grad()
 def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
          hop: int = CLIP_FRAMES // 2, batch_size: int = 16,
          amp: bool = True, progress=None) -> np.ndarray:
@@ -66,20 +67,34 @@ def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
     after each batch. A full episode on CPU is minutes of silence otherwise,
     which is indistinguishable from a hang to anything supervising this.
     """
-    frames = np.concatenate(list(stream_gray(video, size, FPS)), axis=0)
+    import numpy as np
+    import torch
+
+    from .config import AUDIO_SR, CLIP_FRAMES, FPS
+    from .features import audio_features, decode_audio
+
+    with torch.no_grad():
+        return _scan(video, model, cfg, device, size, hop, batch_size, amp, progress,
+                     np, torch, AUDIO_SR, CLIP_FRAMES, FPS, audio_features, decode_audio)
+
+
+def _scan(video, model, cfg, device, size, hop, batch_size, amp, progress,
+          np, torch, audio_sr, clip_frames, fps, audio_features, decode_audio):
+    """Dependency-injected implementation so ``cdml infer --help`` stays light."""
+    frames = np.concatenate(list(stream_gray(video, size, fps)), axis=0)
     n = frames.shape[0]
 
-    wav = decode_audio(video, sr=AUDIO_SR)
+    wav = decode_audio(video, sr=audio_sr)
     audio = audio_features(wav, n)
 
-    if n < CLIP_FRAMES:                       # pad a very short file
-        pad = CLIP_FRAMES - n
+    if n < clip_frames:                       # pad a very short file
+        pad = clip_frames - n
         frames = np.concatenate([frames, np.repeat(frames[-1:], pad, 0)], 0)
         audio = np.concatenate([audio, np.repeat(audio[-1:], pad, 0)], 0)
 
-    starts = list(range(0, max(1, len(frames) - CLIP_FRAMES + 1), hop))
-    if starts[-1] + CLIP_FRAMES < len(frames):
-        starts.append(len(frames) - CLIP_FRAMES)
+    starts = list(range(0, max(1, len(frames) - clip_frames + 1), hop))
+    if starts[-1] + clip_frames < len(frames):
+        starts.append(len(frames) - clip_frames)
 
     total = np.zeros(len(frames), np.float64)
     count = np.zeros(len(frames), np.float64)
@@ -87,8 +102,8 @@ def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
 
     for i in range(0, len(starts), batch_size):
         block = starts[i:i + batch_size]
-        fb = np.stack([frames[s:s + CLIP_FRAMES] for s in block])
-        ab = np.stack([audio[s:s + CLIP_FRAMES] for s in block])
+        fb = np.stack([frames[s:s + clip_frames] for s in block])
+        ab = np.stack([audio[s:s + clip_frames] for s in block])
 
         ft = torch.from_numpy(fb).to(device).float().div_(255.0)
         at = torch.from_numpy(ab).to(device)
@@ -99,16 +114,19 @@ def scan(video: str, model, cfg, device, size: int = IMG_SIZE,
         # Average probabilities over every window covering a frame, rather than
         # letting the last (or any OR-ing) window win.
         for s, p in zip(block, probs):
-            total[s:s + CLIP_FRAMES] += p
-            count[s:s + CLIP_FRAMES] += 1.0
+            total[s:s + clip_frames] += p
+            count[s:s + clip_frames] += 1.0
 
         if progress is not None:
-            progress(min(block[-1] + CLIP_FRAMES, n), n)
+            progress(min(block[-1] + clip_frames, n), n)
 
     return (total / np.maximum(count, 1.0))[:n]
 
 
 def to_events(scores: np.ndarray, cfg, fps: int = FPS) -> list[dict]:
+    from .config import FPS
+    from .metrics import hysteresis, to_segments
+
     mask = hysteresis(scores, cfg.hyst_high, cfg.hyst_low,
                       cfg.min_event_frames, cfg.smooth_frames)
     events = []
@@ -128,9 +146,10 @@ def fmt(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:06.3f}"
 
 
-def main() -> None:
+def main(argv=None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--model", required=True)
+    ap.add_argument("--model",
+                    help="checkpoint path; downloads the verified default when omitted")
     ap.add_argument("--video", required=True)
     ap.add_argument("--json", help="write events here instead of stdout only")
     ap.add_argument("--scores", help="save the raw per-frame probabilities (.npy)")
@@ -139,10 +158,19 @@ def main() -> None:
     ap.add_argument("--high", type=float, default=None)
     ap.add_argument("--low", type=float, default=None)
     ap.add_argument("--min-frames", type=int, default=None)
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+
+    import numpy as np
+    import torch
+
+    from .features import probe_duration
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model, cfg, thr = load_model(args.model, device)
+    try:
+        model_path = resolve_model_path(args.model)
+    except RuntimeError as exc:
+        ap.error(str(exc))
+    model, cfg, thr = load_model(str(model_path), device)
 
     # Default the trigger to the threshold tuned on validation, not to 0.5.
     cfg.hyst_high = args.high if args.high is not None else max(thr, cfg.hyst_low)

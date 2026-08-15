@@ -13,28 +13,34 @@ redistribution.
 
 ## Quick start
 
-Install the Python dependencies and make sure `ffmpeg` and `ffprobe` are on
-your `PATH`.
+Install CDML and make sure `ffmpeg` and `ffprobe` are on your `PATH`. They are
+system prerequisites: a portable Python wheel cannot install them reliably.
 
 ```bash
-pip install -r requirements.txt
+pip install git+https://github.com/andrew-avinante/commercial-detctor-ml.git
 # CUDA 12.x example:
 # pip install torch --index-url https://download.pytorch.org/whl/cu124
 
-python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
+cdml infer --video episode.mkv
 ```
 
 ### Released checkpoint
 
 The released Apache-2.0 checkpoint is hosted at
 [andrew-avinante/cdml-fade-detector](https://huggingface.co/andrew-avinante/cdml-fade-detector).
-Download it with the Hugging Face CLI, then supply its path to CDML:
+The first command that needs the model downloads the released checkpoint to
+your user cache, verifies its SHA-256, and then uses it. Download it ahead of
+time (or refresh a corrupt cache) with:
 
 ```bash
-pip install huggingface_hub
-hf download andrew-avinante/cdml-fade-detector fade_detector.pt --local-dir models
+cdml model download
+cdml model download --force
+```
 
-python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
+For offline or custom checkpoints, pass an explicit path:
+
+```bash
+cdml infer --model /models/fade_detector.pt --video episode.mkv
 ```
 
 Example output:
@@ -75,18 +81,32 @@ credits, or use audio/video formats unlike the training media.
 
 ## Add chapter markers
 
-`cdml.mark_chapters` runs the detector across an episode or show directory and
-remuxes chapter markers without re-encoding streams.
+`cdml chapters mark` combines fixed chapter marks with confidence-ranked ML
+detections and remuxes them without re-encoding streams.
 
 ```bash
-python -m cdml.mark_chapters "/media/Shows/Example Show" --dry-run
-python -m cdml.mark_chapters "/media/Shows/Example Show" --in-place
+# Guarantee marks one minute from either end.
+cdml chapters mark episode.mkv --mark start:60 --mark end:60
+
+# Look for fades in one or more bounded regions.
+cdml chapters mark episode.mkv --auto start:60 end:60 --auto-cap 3
+
+# Inspect the full plan without changing the source.
+cdml chapters mark episode.mkv --auto start:60 end:60 --dry-run --json plan.json
 ```
 
 By default, files that already contain chapters are skipped. Use `--existing
 compare` to compare predictions against them, or `--existing replace` only when
 you intend to replace the existing markers. Without `--in-place`, output is
 written alongside the source as `<name>.chapters<ext>`.
+
+An endpoint is `start:<time>` or `end:<time>`. Times accept bare seconds,
+seconds with `s`, `MM:SS`, `HH:MM:SS`, and compact units such as `1h2m3s`.
+`--min-gap` applies globally to fixed and automatic boundaries; conflicting
+fixed marks are an error, while automatic candidates lose to fixed marks and
+higher-confidence automatic candidates. `--auto-cap` is per `--auto` range;
+zero disables the cap. JSON reports include resolved rules, accepted origins,
+automatic confidences, and every rejection reason.
 
 ## Create your own training data
 
