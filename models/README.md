@@ -3,6 +3,9 @@
 `fade_detector.pt` is the released checkpoint for the CDML commercial-break
 boundary detector.
 
+The published model repository is
+[andrew-avinante/cdml-fade-detector](https://huggingface.co/andrew-avinante/cdml-fade-detector).
+
 ## License
 
 The checkpoint is licensed under [Apache-2.0](../LICENSE), the same license as

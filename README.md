@@ -24,6 +24,19 @@ pip install -r requirements.txt
 python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
 ```
 
+### Released checkpoint
+
+The released Apache-2.0 checkpoint is hosted at
+[andrew-avinante/cdml-fade-detector](https://huggingface.co/andrew-avinante/cdml-fade-detector).
+Download it with the Hugging Face CLI, then supply its path to CDML:
+
+```bash
+pip install huggingface_hub
+hf download andrew-avinante/cdml-fade-detector fade_detector.pt --local-dir models
+
+python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
+```
+
 Example output:
 
 ```text
