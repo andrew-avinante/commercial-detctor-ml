@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=68"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "cdml"
@@ -9,28 +9,26 @@ description = "Commercial-break fade detection for video, and the chapter markin
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "Andrew Avinante", email = "andrewavinante@gmail.com" }]
-
-# Inference only. Decoding is done by shelling out to ffmpeg/ffprobe, which are
-# system binaries rather than wheels, so they cannot be declared here -- see
-# `cdml.features` for the decoding pipeline.
 dependencies = [
     "numpy>=1.24",
     "torch>=2.4",
 ]
 
-[project.optional-dependencies]
-# Training pulls in the plotting and progress stack that inference has no use
-# for. Kept out of the default install so a consumer that only ever calls
-# `infer`/`mark_chapters` -- chapter-inserter, for one -- does not ship them.
-train = [
-    "matplotlib>=3.7",
-    "tqdm>=4.66",
-]
-
 [project.scripts]
-cdml-infer = "cdml.infer:main"
-cdml-mark-chapters = "cdml.mark_chapters:main"
+cdml = "cdml.cli:main"
 
-# Only the supported package is installable.
-[tool.setuptools]
-packages = ["cdml"]
+[tool.poetry]
+packages = [{ include = "cdml" }]
+
+[tool.poetry.group.training]
+optional = true
+
+[tool.poetry.group.training.dependencies]
+# Training pulls in plotting and progress reporting but inference does not.
+matplotlib = ">=3.7"
+tqdm = ">=4.66"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.0"
+coverage = ">=7.0"
+ruff = ">=0.8"

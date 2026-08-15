@@ -7,7 +7,7 @@ full-episode inference, and chapter writing.
 ## Install
 
 ```bash
-pip install -r requirements.txt
+pip install cdml
 # CUDA 12.x on the 3060:
 #   pip install torch --index-url https://download.pytorch.org/whl/cu124
 ```
@@ -17,8 +17,12 @@ pip install -r requirements.txt
 ## Detect breaks
 
 ```bash
-python -m cdml.infer --model models/fade_detector.pt --video episode.mkv
+cdml infer --video episode.mkv
 ```
+
+The default checkpoint is downloaded into the user cache and SHA-256 verified
+on first use. Run `cdml model download` first when preparing an offline host,
+or give either command `--model /path/to/fade_detector.pt`.
 
 Inference decodes an episode once, combines overlapping-window probabilities,
 then applies smoothing, hysteresis, and a minimum event duration to produce
@@ -26,17 +30,22 @@ stable fade segments.
 
 ## Write chapters
 
-`cdml.mark_chapters` detects breaks and writes their midpoint as chapter marks
-without re-encoding media streams.
+`cdml chapters mark` writes fixed chapter marks and confidence-ranked automatic
+fade detections without re-encoding media streams.
 
 ```bash
-python -m cdml.mark_chapters "/media/Authorized/Example Show" --dry-run
-python -m cdml.mark_chapters "/media/Authorized/Example Show" --in-place
+cdml chapters mark episode.mkv --mark start:60 --mark end:60
+cdml chapters mark episode.mkv --auto start:60 end:60 --auto-cap 3 --dry-run
 ```
 
 Files that already contain chapters are skipped by default. Use
 `--existing replace` to replace them or `--existing compare` to score detected
 breaks against existing marks.
+
+Endpoint times use `start:<time>` or `end:<time>` and accept seconds, `60s`,
+`MM:SS`, `HH:MM:SS`, or `1h2m3s`. `--min-gap` is global; `--auto-cap` applies
+to each automatic range independently. The `--json` report records resolved
+rules and the reason for every rejected automatic candidate.
 
 ## Build a dataset
 
