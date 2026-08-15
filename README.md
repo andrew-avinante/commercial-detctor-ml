@@ -1,4 +1,4 @@
-# commercial-detector-ml
+# Commercial Detector ML
 
 `commercial-detector-ml` (CDML) finds commercial-break boundaries in episodic
 video. It looks for the paired **fade to black** and **fade to silence** that
